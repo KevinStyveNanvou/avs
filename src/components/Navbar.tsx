@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('accueil')}>
             <div>
-              <img src="https://github.com/KevinStyveNanvou/avs/blob/main/public/img/logo.png" alt="Logo" className="w-25 h-20" />
+              <img src="/img/logo.png" alt="Logo" className="w-25 h-20" />
             </div>
           </div>
 

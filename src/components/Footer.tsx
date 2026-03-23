@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-                <img src="https://github.com/KevinStyveNanvou/avs/blob/main/public/img/logo.png" alt="Logo" className="w-23 h-21" />
+                <img src="/img/logo.png" alt="Logo" className="w-23 h-21" />
 
             </div>
             <p className="text-gray-400 leading-relaxed">{t.footer.tagline}</p>
