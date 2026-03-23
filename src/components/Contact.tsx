@@ -153,7 +153,7 @@ export default function Contact() {
             className="relative h-[650px] rounded-2xl overflow-hidden"
           >
             <img
-              src="/img/call.jpg"
+              src="https://github.com/KevinStyveNanvou/avs/blob/main/public/img/call.jpg"
               alt="Contact background"
               className="absolute inset-0 w-full h-full object-cover"
             />

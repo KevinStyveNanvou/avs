@@ -25,6 +25,8 @@ export default function Navbar() {
     }
   };
 
+  // https://avs-63yd3me81-nanvous-projects.vercel.app/
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -37,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('accueil')}>
             <div>
-              <img src="/public/img/logo.png" alt="Logo" className="w-25 h-20" />
+              <img src="https://github.com/KevinStyveNanvou/avs/blob/main/public/img/logo.png" alt="Logo" className="w-25 h-20" />
             </div>
           </div>
 
