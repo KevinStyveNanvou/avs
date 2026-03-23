@@ -1,4 +1,4 @@
-// Contact.tsx
+// components/Contact.tsx
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin, Phone, Mail, MessageCircle, Send } from 'lucide-react';
@@ -32,13 +32,13 @@ export default function Contact() {
 
     emailjs
       .send(
-        "AVS", // Service ID
-        "template_jw8gfip", // Template ID
+        "AVS",
+        "template_jw8gfip",
         {
           Courriel: formData.email,
           Message: `Bonjour, je suis ${formData.name}, intéressé par vos services de ${formData.service}. Veuillez me contacter dès que possible au ${formData.phone}. Merci!`,
         },
-        "9n2s8XoZt3mLh7a1k" // Public Key
+        "9n2s8XoZt3mLh7a1k"
       )
       .then(() => {
         toast.success('Message envoyé avec succès !');
@@ -69,11 +69,9 @@ export default function Contact() {
       className="py-24 px-4 bg-white dark:bg-[#0E0A1A]"
       ref={ref}
     >
-      {/* Toaster notifications */}
       <Toaster position="top-right" />
 
       <div className="max-w-7xl mx-auto">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -88,7 +86,6 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact info & map */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -110,14 +107,14 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#E92252] rounded-full flex items-center justify-center flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <span className="text-gray-700 dark:text-gray-300 font-medium">{info.label}</span>
                   </a>
                 ) : (
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#E92252] rounded-full flex items-center justify-center flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <span className="text-gray-700 dark:text-gray-300 font-medium">{info.label}</span>
@@ -130,7 +127,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.7 }}
-              className="wave-card bg-gradient-to-br from-[#5BC4F0] to-[#3013a6] dark:from-[#7B2FBE] dark:to-[#D4AF37] p-1"
+              className="wave-card bg-[#E92252] p-1"
             >
               <div className="wave-card overflow-hidden h-64">
                 <iframe
@@ -145,7 +142,6 @@ export default function Contact() {
             </motion.div>
           </motion.div>
 
-          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -157,14 +153,13 @@ export default function Contact() {
               alt="Contact background"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-blue-800/70" />
+            <div className="absolute inset-0 bg-[#E92252]/70" />
 
             <div className="relative z-10 h-full flex items-center justify-center p-6">
               <form
                 onSubmit={handleSubmit}
                 className="w-full mt-18 max-w-lg bg-white/20 p-10 dark:bg-black/40 rounded-2xl shadow-xl space-y-6"
               >
-                {/* Name */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3 }}>
                   <label className="form-label">{t.contact.form.name}</label>
                   <input
@@ -177,7 +172,6 @@ export default function Contact() {
                   />
                 </motion.div>
 
-                {/* Email */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.4 }}>
                   <label className="form-label">{t.contact.form.email}</label>
                   <input
@@ -190,7 +184,6 @@ export default function Contact() {
                   />
                 </motion.div>
 
-                {/* Phone */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.5 }}>
                   <label className="form-label">{t.contact.form.phone}</label>
                   <input
@@ -203,7 +196,6 @@ export default function Contact() {
                   />
                 </motion.div>
 
-                {/* Service */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.6 }}>
                   <label className="form-label">{t.contact.form.service}</label>
                   <select
@@ -221,7 +213,6 @@ export default function Contact() {
                   </select>
                 </motion.div>
 
-                {/* Message */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.7 }}>
                   <label className="form-label">{t.contact.form.message}</label>
                   <textarea
@@ -234,11 +225,10 @@ export default function Contact() {
                   />
                 </motion.div>
 
-                {/* Submit */}
                 <motion.button
                   type="submit"
                   disabled={loading}
-                  className="group w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 disabled:opacity-50"
+                  className="group w-full bg-[#E92252] hover:bg-[#c01e46] text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 disabled:opacity-50"
                 >
                   {loading ? '...' : t.contact.form.submit}
                   <Send className="transition-transform group-hover:translate-x-1" />

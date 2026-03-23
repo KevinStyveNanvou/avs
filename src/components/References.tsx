@@ -1,3 +1,4 @@
+// components/References.tsx
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
@@ -87,7 +88,7 @@ export default function References() {
                 transition={{ delay: 0.3 + index * 0.1 }}
                 className="wave-card glass-card p-6 text-center hover-lift"
               >
-                <Icon className="w-12 h-12 mx-auto mb-3 text-[#5BC4F0] dark:text-[#7B2FBE]" />
+                <Icon className="w-12 h-12 mx-auto mb-3 text-[#E92252]" />
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   {client}
                 </p>
@@ -103,7 +104,7 @@ export default function References() {
           className="max-w-4xl mx-auto relative"
         >
           <div className="wave-card glass-card p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute top-0 left-0 text-[#5BC4F0] dark:text-[#7B2FBE] opacity-20 text-8xl font-serif">
+            <div className="absolute top-0 left-0 text-[#E92252] opacity-20 text-8xl font-serif">
               "
             </div>
 
@@ -124,7 +125,7 @@ export default function References() {
               </p>
 
               <div className="text-center">
-                <p className="font-bold text-[#D62839] dark:text-[#D4AF37] text-lg">
+                <p className="font-bold text-[#E92252] text-lg">
                   {t.references.testimonials[currentTestimonial].name}
                 </p>
                 <p className="text-gray-600 dark:text-gray-400">
@@ -133,7 +134,7 @@ export default function References() {
               </div>
             </div>
 
-            <div className="absolute bottom-0 right-0 text-[#5BC4F0] dark:text-[#7B2FBE] opacity-20 text-8xl font-serif transform rotate-180">
+            <div className="absolute bottom-0 right-0 text-[#E92252] opacity-20 text-8xl font-serif transform rotate-180">
               "
             </div>
           </div>
@@ -143,7 +144,7 @@ export default function References() {
               onClick={prevTestimonial}
               className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:scale-110 transition-transform"
             >
-              <ChevronLeft className="w-6 h-6 text-[#5BC4F0] dark:text-[#7B2FBE]" />
+              <ChevronLeft className="w-6 h-6 text-[#E92252]" />
             </button>
 
             <div className="flex space-x-2">
@@ -153,7 +154,7 @@ export default function References() {
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentTestimonial
-                      ? 'bg-[#D62839] dark:bg-[#D4AF37] w-8'
+                      ? 'bg-[#E92252] w-8'
                       : 'bg-gray-300 dark:bg-gray-600'
                   }`}
                 />
@@ -164,7 +165,7 @@ export default function References() {
               onClick={nextTestimonial}
               className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:scale-110 transition-transform"
             >
-              <ChevronRight className="w-6 h-6 text-[#5BC4F0] dark:text-[#7B2FBE]" />
+              <ChevronRight className="w-6 h-6 text-[#E92252]" />
             </button>
           </div>
         </motion.div>

@@ -1,3 +1,4 @@
+// components/Services.tsx
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
@@ -79,7 +80,7 @@ export default function Services() {
               onClick={() => setActiveTab(index)}
               className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all ${
                 activeTab === index
-                  ? 'bg-gradient-to-r from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] text-white shadow-lg scale-105'
+                  ? 'bg-[#E92252] text-white shadow-lg scale-105'
                   : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:scale-105'
               }`}
             >
@@ -115,7 +116,7 @@ export default function Services() {
                         {plan.badge}
                       </div>
                     )}
-                    <h3 className="text-2xl font-bold text-[#D62839] dark:text-[#D4AF37] mb-4">
+                    <h3 className="text-2xl font-bold text-[#E92252] mb-4">
                       {plan.name}
                     </h3>
                     <div className="mb-4">
@@ -141,18 +142,18 @@ export default function Services() {
                 transition={{ delay: 0.5 }}
                 className="wave-card glass-card p-8"
               >
-                <h4 className="text-xl font-bold text-[#D62839] dark:text-[#D4AF37] mb-4">
+                <h4 className="text-xl font-bold text-[#E92252] mb-4">
                   {t.services.business.included}
                 </h4>
                 <ul className="space-y-3">
                   {t.services.business.services.map((service, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="w-5 h-5 text-[#5BC4F0] dark:text-[#7B2FBE] mr-3 mt-1 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-[#E92252] mr-3 mt-1 flex-shrink-0" />
                       <span className="text-gray-700 dark:text-gray-300">{service}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 inline-block bg-gradient-to-r from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] text-white px-6 py-2 rounded-full font-medium">
+                <div className="mt-6 inline-block bg-[#E92252] text-white px-6 py-2 rounded-full font-medium">
                   {t.services.business.materials}
                 </div>
               </motion.div>
@@ -176,7 +177,7 @@ export default function Services() {
                     transition={{ delay: index * 0.1 }}
                     className="wave-card glass-card p-6 hover-lift"
                   >
-                    <h3 className="text-2xl font-bold text-[#D62839] dark:text-[#D4AF37] mb-4">
+                    <h3 className="text-2xl font-bold text-[#E92252] mb-4">
                       {formula.name}
                     </h3>
                     <div className="mb-4">
@@ -206,13 +207,13 @@ export default function Services() {
                 transition={{ delay: 0.5 }}
                 className="wave-card glass-card p-8"
               >
-                <h4 className="text-xl font-bold text-[#D62839] dark:text-[#D4AF37] mb-4">
+                <h4 className="text-xl font-bold text-[#E92252] mb-4">
                   {t.services.business.included}
                 </h4>
                 <ul className="space-y-3">
                   {t.services.home.tasks.map((task, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="w-5 h-5 text-[#5BC4F0] dark:text-[#7B2FBE] mr-3 mt-1 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-[#E92252] mr-3 mt-1 flex-shrink-0" />
                       <span className="text-gray-700 dark:text-gray-300">{task}</span>
                     </li>
                   ))}
@@ -238,16 +239,16 @@ export default function Services() {
                   transition={{ delay: index * 0.1 }}
                   className="wave-card glass-card p-6 hover-lift"
                 >
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] rounded-full mb-4">
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-[#E92252] rounded-full mb-4">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#D62839] dark:text-[#D4AF37] mb-4">
+                  <h3 className="text-xl font-bold text-[#E92252] mb-4">
                     {service.title}
                   </h3>
                   <ul className="space-y-2">
                     {service.items.map((item, idx) => (
                       <li key={idx} className="flex items-start">
-                        <Check className="w-4 h-4 text-[#5BC4F0] dark:text-[#7B2FBE] mr-2 mt-1 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-[#E92252] mr-2 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 dark:text-gray-300 text-sm">
                           {item}
                         </span>

@@ -1,3 +1,4 @@
+// components/Hero.tsx
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
@@ -49,7 +50,7 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="min-h-screen flex bg-[#23b1e0]/40 dark:bg-transparent items-center justify-center pt-20 px-4 relative overflow-hidden"
+      className="min-h-screen flex bg-white/40 dark:bg-transparent items-center justify-center pt-20 px-4 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -61,7 +62,7 @@ export default function Hero() {
             <div className="h-24 mb-4">
               <h1 className="text-5xl md:text-7xl font-bold text-[#0D1B2A] dark:text-white">
                 {displayedText}
-                <span className="text-[#D62839] dark:text-[#D4AF37] animate-pulse">
+                <span className="text-[#E92252] animate-pulse">
                   |
                 </span>
               </h1>
@@ -94,17 +95,15 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
             className="relative"
           >
-            
-              <div className="wave-card bg-gradient-to-br from-[#5BC4F0] to-[#1909c6] dark:from-[#7B2FBE] dark:to-[#D4AF37] p-1">
-                <div className="wave-card bg-white dark:bg-[#0E0A1A] p-0 overflow-hidden">
-                  <img
-                    src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Professional cleaning service"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <div className="wave-card bg-[#E92252] p-1">
+              <div className="wave-card bg-white dark:bg-[#0E0A1A] p-0 overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Professional cleaning service"
+                  className="w-full h-full object-cover"
+                />
               </div>
-          
+            </div>
           </motion.div>
         </div>
       </div>

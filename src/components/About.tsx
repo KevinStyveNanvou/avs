@@ -1,3 +1,4 @@
+// components/About.tsx
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, Award, Briefcase } from 'lucide-react';
@@ -64,15 +65,13 @@ export default function About() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          
-
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
           >
-            <div className="wave-card bg-gradient-to-br from-[#5BC4F0] to-[#26106e] dark:from-[#7B2FBE] dark:to-[#D4AF37] p-1">
-              <div className="wave-card overflow-hidden h-80">
+            <div className="wave-card bg-[#E92252] p-1">
+              <div className="wave-card overflow-hidden h-80 bg-white dark:bg-[#0E0A1A]">
                 <img
                   src="https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Professional team"
@@ -84,9 +83,9 @@ export default function About() {
 
           <motion.div
             className="min-w-0 p-8"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
           >
             <div className="wave-card glass-card p-8 overflow-hidden">
               <p className="text-lg m-3 text-center text-gray-700 dark:text-gray-200 leading-relaxed break-words whitespace-normal">
@@ -94,7 +93,6 @@ export default function About() {
               </p>
             </div>
           </motion.div>
-
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -110,10 +108,10 @@ export default function About() {
               }}
               className="wave-card glass-card p-8 text-center hover-lift"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#E92252] rounded-full mb-4">
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
-              <div className="text-5xl font-bold text-[#D62839] dark:text-[#D4AF37] mb-2">
+              <div className="text-5xl font-bold text-[#E92252] dark:text-[#E92252] mb-2">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-gray-700 dark:text-gray-300 font-medium">
