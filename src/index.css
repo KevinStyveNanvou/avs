@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.2;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+}
+.form-label {
+  @apply block text-sm font-medium text-gray-200 mb-2;
+}
+
+.form-input-premium {
+  @apply w-full px-4 py-3 rounded-xl bg-blue-800/50 dark:bg-white/10 
+  border  focus:border-blue-700 
+  focus:ring-2 focus:ring-blue-400/50 outline-none
+  text-gray-800 dark:text-white
+  placeholder-gray-400
+  transition-all duration-300;
+}
+
+@layer components {
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-[#0D1B2A] dark:text-white mb-2;
+  }
+
+  .section-underline {
+    @apply w-24 h-1 bg-gradient-to-r from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] mx-auto rounded-full;
+  }
+
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-[#5BC4F0] dark:hover:text-[#D4AF37] font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#5BC4F0] dark:after:bg-[#D4AF37] after:transition-all hover:after:w-full;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-[#D62839] to-[#ff4757] dark:from-[#D4AF37] dark:to-[#FFD700] text-white rounded-full font-medium shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full transition-all duration-700;
+  }
+
+  .btn-primary:hover::before {
+    @apply opacity-30 translate-x-full;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 border-2 border-[#5BC4F0] dark:border-[#7B2FBE] text-[#5BC4F0] dark:text-[#7B2FBE] rounded-full font-medium hover:bg-[#5BC4F0] dark:hover:bg-[#7B2FBE] hover:text-white transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .wave-card {
+    @apply relative;
+    border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  }
+
+  .glass-card {
+    @apply bg-white/80 dark:bg-[rgba(123,47,190,0.15)] backdrop-blur-lg shadow-xl border border-gray-200/50 dark:border-[#7B2FBE]/30;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-lg focus:border-[#5BC4F0] dark:focus:border-[#7B2FBE] focus:ring-4 focus:ring-[#5BC4F0]/20 dark:focus:ring-[#7B2FBE]/20 transition-all duration-300 outline-none text-gray-900 dark:text-white;
+  }
+
+  .whatsapp-button {
+    @apply w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform;
+    animation: pulse-scale 2s ease-in-out infinite;
+  }
+
+  .wave-divider {
+    @apply absolute bottom-0 left-0 w-full h-24 -mb-px;
+  }
+}
+
+@layer utilities {
+  .bubble {
+    @apply absolute rounded-full pointer-events-none;
+    animation: bubble-float linear infinite;
+  }
+
+  .bubble-light {
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(107, 202, 228, 0.8),
+      rgba(36, 33, 236, 0.6) 30%,
+      rgba(255, 182, 193, 0.4) 60%,
+      transparent
+    );
+    box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8),
+      inset 5px 5px 10px rgba(91, 196, 240, 0.3);
+  }
+
+
+
+  .bubble-dark {
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(81, 62, 81, 0.4),
+      rgba(49, 40, 229, 0.6) 30%,
+      rgba(51, 7, 79, 0.3) 60%,
+      transparent
+    );
+    box-shadow: inset -5px -5px 15px rgba(212, 175, 55, 0.3),
+      inset 5px 5px 10px rgba(123, 47, 190, 0.4);
+  }
+
+
+}
+
+@keyframes bubble-float {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.35;
+    transform: translateY(90vh) translateX(10px) scale(1);
+  }
+  25% {
+    transform: translateY(75vh) translateX(-15px) scale(1);
+  }
+  50% {
+    transform: translateY(50vh) translateX(20px) scale(1);
+  }
+  75% {
+    transform: translateY(25vh) translateX(-10px) scale(1);
+  }
+  90% {
+    opacity: 0.25;
+    transform: translateY(10vh) translateX(15px) scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(30px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
