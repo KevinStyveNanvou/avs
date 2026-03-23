@@ -16,7 +16,20 @@
     font-family: 'Outfit', sans-serif;
     line-height: 1.2;
   }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
+#root, .app-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
   * {
     scroll-behavior: smooth;
   }

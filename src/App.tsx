@@ -12,23 +12,19 @@ import Image from './components/image';
 
 function App() {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <div className="relative min-h-screen bg-gray-100 dark:bg-[#0E0A1A] text-gray-900 dark:text-white transition-colors duration-300">
-          <BubbleBackground />
-          <Navbar />
-          <main className="relative z-10">
-            <Hero />
-            <About />
-            <Image/>
-            <Services />
-            <References />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
-      </LanguageProvider>
-    </ThemeProvider>
+   <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-gray-100 dark:bg-[#0E0A1A] text-gray-900 dark:text-white transition-colors duration-300">
+  <BubbleBackground />
+  <Navbar />
+  <main className="relative z-10 w-full max-w-full overflow-x-hidden">
+    <Hero />
+    <About />
+    <Image/>
+    <Services />
+    <References />
+    <Contact />
+  </main>
+  <Footer />
+</div>
   );
 }
 
