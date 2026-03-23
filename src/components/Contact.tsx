@@ -235,9 +235,9 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={4}
                     className="form-input-premium resize-none"
+                    placeholder='optional...'
                   />
                 </motion.div>
 
