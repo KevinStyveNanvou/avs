@@ -10,7 +10,7 @@ import References from './components/References';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Image from './components/image';
-import Loading from './components/Loading'; // <-- import du composant
+import Leading from './components/Leading'; // <-- import du composant
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <Leading />;
   }
 
   return (
