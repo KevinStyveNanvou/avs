@@ -66,7 +66,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-4 bg-[#23b1e0]/40 dark:bg-[#0E0A1A]"
+      className="py-24 px-4 bg-white dark:bg-[#0E0A1A]"
       ref={ref}
     >
       {/* Toaster notifications */}

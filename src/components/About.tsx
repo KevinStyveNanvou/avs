@@ -48,7 +48,7 @@ export default function About() {
   ];
 
   return (
-    <section id="apropos" className="py-24 px-4 bg-[#23b1e0]/40 dark:bg-[#0E0A1A]" ref={ref}>
+    <section id="apropos" className="py-24 px-4 bg-white/70 dark:bg-[#0E0A1A]" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

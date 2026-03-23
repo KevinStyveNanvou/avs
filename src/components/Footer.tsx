@@ -20,7 +20,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#0D1B2A] dark:bg-[#0E0A1A] text-white pt-16 pb-8 px-4 overflow-hidden">
+    <footer className="relative bg-white/70 dark:bg-[#0E0A1A] text-white pt-16 pb-8 px-4 overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         {[...Array(5)].map((_, i) => (
           <div

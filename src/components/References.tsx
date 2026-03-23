@@ -54,7 +54,7 @@ export default function References() {
   return (
     <section
       id="references"
-      className="py-24 px-4 bg-[#23b1e0]/40 dark:bg-[#0E0A1A]"
+      className="py-24 px-4 bg-white/70 dark:bg-[#0E0A1A]"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto">
