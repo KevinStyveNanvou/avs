@@ -120,7 +120,7 @@ export default function Hero() {
         <MessageCircle className="w-7 h-7" />
       </motion.a>
 
-      <div className="wave-divider">
+      {/* <div className="wave-divider">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
@@ -131,7 +131,7 @@ export default function Hero() {
             className="fill-white dark:fill-[#0E0A1A]"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 }

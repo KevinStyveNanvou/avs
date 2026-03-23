@@ -57,6 +57,7 @@ export default function Contact() {
         console.error('Formspree error:', errorData);
         toast.error('Erreur lors de l’envoi. Veuillez réessayer.');
       }
+      toast.success('Message envoyé avec succès !');
     } catch (error) {
       console.error('Network error:', error);
       toast.error('Erreur de connexion. Vérifiez votre réseau.');
