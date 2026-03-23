@@ -1,3 +1,5 @@
+/* styles/globals.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
 
 @tailwind base;
@@ -10,12 +12,7 @@
     line-height: 1.5;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
     line-height: 1.2;
   }
@@ -24,34 +21,34 @@
     scroll-behavior: smooth;
   }
 }
+
 .form-label {
   @apply block text-sm font-medium text-gray-200 mb-2;
 }
 
 .form-input-premium {
-  @apply w-full px-4 py-3 rounded-xl bg-blue-800/50 dark:bg-white/10 
-  border  focus:border-blue-700 
-  focus:ring-2 focus:ring-blue-400/50 outline-none
-  text-gray-800 dark:text-white
-  placeholder-gray-400
-  transition-all duration-300;
+  @apply w-full px-4 py-3 rounded-xl bg-white/10 border focus:border-[#E92252] 
+    focus:ring-2 focus:ring-[#E92252]/50 outline-none
+    text-gray-800 dark:text-white
+    placeholder-gray-400
+    transition-all duration-300;
 }
 
 @layer components {
   .section-title {
-    @apply text-4xl md:text-5xl font-bold text-[#0D1B2A] dark:text-white mb-2;
+    @apply text-4xl md:text-5xl font-bold text-[#E92252] dark:text-white mb-2;
   }
 
   .section-underline {
-    @apply w-24 h-1 bg-gradient-to-r from-[#5BC4F0] to-[#D62839] dark:from-[#7B2FBE] dark:to-[#D4AF37] mx-auto rounded-full;
+    @apply w-24 h-1 bg-gradient-to-r from-[#E92252] to-[#E92252]/60 mx-auto rounded-full;
   }
 
   .nav-link {
-    @apply text-gray-700 dark:text-gray-300 hover:text-[#5BC4F0] dark:hover:text-[#D4AF37] font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#5BC4F0] dark:after:bg-[#D4AF37] after:transition-all hover:after:w-full;
+    @apply text-gray-700 dark:text-gray-300 hover:text-[#E92252] dark:hover:text-[#E92252] font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E92252] after:transition-all hover:after:w-full;
   }
 
   .btn-primary {
-    @apply px-8 py-3 bg-gradient-to-r from-[#D62839] to-[#ff4757] dark:from-[#D4AF37] dark:to-[#FFD700] text-white rounded-full font-medium shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center relative overflow-hidden;
+    @apply px-8 py-3 bg-[#E92252] text-white rounded-full font-medium shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center relative overflow-hidden;
   }
 
   .btn-primary::before {
@@ -64,7 +61,11 @@
   }
 
   .btn-secondary {
-    @apply px-8 py-3 border-2 border-[#5BC4F0] dark:border-[#7B2FBE] text-[#5BC4F0] dark:text-[#7B2FBE] rounded-full font-medium hover:bg-[#5BC4F0] dark:hover:bg-[#7B2FBE] hover:text-white transition-all duration-300 hover:scale-105 active:scale-95;
+    @apply px-8 py-3 border-2 border-[#E92252] text-[#E92252] rounded-full font-medium hover:bg-[#E92252] hover:text-white transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-medium hover:border-[#E92252] hover:text-[#E92252] transition-all duration-300;
   }
 
   .wave-card {
@@ -73,7 +74,7 @@
   }
 
   .glass-card {
-    @apply bg-white/80 dark:bg-[rgba(123,47,190,0.15)] backdrop-blur-lg shadow-xl border border-gray-200/50 dark:border-[#7B2FBE]/30;
+    @apply bg-white/80 dark:bg-[#E92252]/10 backdrop-blur-lg shadow-xl border border-gray-200/50 dark:border-[#E92252]/30;
   }
 
   .hover-lift {
@@ -81,7 +82,7 @@
   }
 
   .form-input {
-    @apply w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-lg focus:border-[#5BC4F0] dark:focus:border-[#7B2FBE] focus:ring-4 focus:ring-[#5BC4F0]/20 dark:focus:ring-[#7B2FBE]/20 transition-all duration-300 outline-none text-gray-900 dark:text-white;
+    @apply w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-lg focus:border-[#E92252] focus:ring-4 focus:ring-[#E92252]/20 transition-all duration-300 outline-none text-gray-900 dark:text-white;
   }
 
   .whatsapp-button {
@@ -91,6 +92,19 @@
 
   .wave-divider {
     @apply absolute bottom-0 left-0 w-full h-24 -mb-px;
+  }
+
+  /* AVS specific components */
+  .avs-card {
+    @apply bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .avs-badge {
+    @apply px-3 py-1 text-xs font-medium rounded-full bg-[#E92252]/10 text-[#E92252];
+  }
+
+  .avs-tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700;
   }
 }
 
@@ -103,30 +117,51 @@
   .bubble-light {
     background: radial-gradient(
       circle at 30% 30%,
-      rgba(107, 202, 228, 0.8),
-      rgba(36, 33, 236, 0.6) 30%,
-      rgba(255, 182, 193, 0.4) 60%,
+      rgba(233, 34, 82, 0.8),
+      rgba(233, 34, 82, 0.6) 30%,
+      rgba(233, 34, 82, 0.4) 60%,
       transparent
     );
     box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8),
-      inset 5px 5px 10px rgba(91, 196, 240, 0.3);
+                inset 5px 5px 10px rgba(233, 34, 82, 0.3);
   }
-
-
 
   .bubble-dark {
     background: radial-gradient(
       circle at 30% 30%,
-      rgba(81, 62, 81, 0.4),
-      rgba(49, 40, 229, 0.6) 30%,
-      rgba(51, 7, 79, 0.3) 60%,
+      rgba(233, 34, 82, 0.4),
+      rgba(233, 34, 82, 0.6) 30%,
+      rgba(233, 34, 82, 0.3) 60%,
       transparent
     );
-    box-shadow: inset -5px -5px 15px rgba(212, 175, 55, 0.3),
-      inset 5px 5px 10px rgba(123, 47, 190, 0.4);
+    box-shadow: inset -5px -5px 15px rgba(233, 34, 82, 0.3),
+                inset 5px 5px 10px rgba(233, 34, 82, 0.4);
   }
 
+  /* Background variants based on AVS chart */
+  .bg-avs-red {
+    background-color: #E92252;
+  }
 
+  .bg-avs-white {
+    background-color: #FFFFFF;
+  }
+
+  .bg-avs-gray {
+    background-color: #E6E7E8;
+  }
+
+  .text-avs-red {
+    color: #E92252;
+  }
+
+  .text-avs-gray {
+    color: #E6E7E8;
+  }
+
+  .border-avs-red {
+    border-color: #E92252;
+  }
 }
 
 @keyframes bubble-float {
@@ -158,8 +193,7 @@
 }
 
 @keyframes pulse-scale {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
