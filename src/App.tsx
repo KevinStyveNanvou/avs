@@ -14,10 +14,12 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="relative min-h-screen bg-gray-100 dark:bg-[#0E0A1A] text-gray-900 dark:text-white transition-colors duration-300">
+        {/* Conteneur principal : largeur totale, pas de débordement horizontal */}
+        <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-gray-100 dark:bg-[#0E0A1A] text-gray-900 dark:text-white transition-colors duration-300">
           <BubbleBackground />
           <Navbar />
-          <main className="relative z-10">
+          {/* Le main hérite également des règles de largeur */}
+          <main className="relative z-10 w-full max-w-full overflow-x-hidden">
             <Hero />
             <About />
             <Image/>
