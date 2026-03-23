@@ -68,7 +68,7 @@ export default function Hero() {
               </h1>
             </div>
 
-            <p className="text-2xl text-gray-600 dark:text-gray-300 mt-12 mb-8">
+            <p className="text-2xl text-gray-600 dark:text-gray-300 mt-15 lg:mt-12 mb-8">
               {t.hero.tagline}
             </p>
 

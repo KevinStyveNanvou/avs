@@ -28,10 +28,7 @@ export default function Services() {
   ];
 
   const businessPlans = [
-    {
-      ...t.services.business.premium,
-      popular: true,
-    },
+    { ...t.services.business.premium, popular: true },
     t.services.business.honorable,
     t.services.business.standard,
     t.services.business.basic,
@@ -52,7 +49,6 @@ export default function Services() {
     { ...t.services.oneTime.hospital, icon: HeartPulse },
   ];
 
-  // Mapping des images de fond (vous pouvez personnaliser les URLs)
   const getBackgroundImage = (title: string) => {
     const images: Record<string, string> = {
       premium: 'https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg',
@@ -75,6 +71,7 @@ export default function Services() {
   return (
     <section id="services" className="py-24 px-4 bg-white/70 dark:bg-[#0E0A1A]" ref={ref}>
       <div className="max-w-7xl mx-auto">
+        {/* Titre */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -88,6 +85,7 @@ export default function Services() {
           </p>
         </motion.div>
 
+        {/* Onglets */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -111,6 +109,7 @@ export default function Services() {
         </motion.div>
 
         <AnimatePresence mode="wait">
+          {/* ENTREPRISE */}
           {activeTab === 0 && (
             <motion.div
               key="business"
@@ -119,7 +118,7 @@ export default function Services() {
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.4 }}
             >
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {businessPlans.map((plan, index) => {
                   const bgImage = getBackgroundImage(plan.name.toLowerCase());
                   return (
@@ -128,7 +127,7 @@ export default function Services() {
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className={`wave-card glass-card p-6 hover-lift relative text-center overflow-hidden ${
+                      className={`relative text-center overflow-hidden rounded-2xl ${
                         plan.popular ? 'ring-2 ring-[#FFE600] scale-105' : ''
                       }`}
                       style={{
@@ -137,13 +136,9 @@ export default function Services() {
                         backgroundPosition: 'center',
                       }}
                     >
-                      {/* Overlay noir 40% + flou */}
+                      {/* Overlay */}
                       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-                      {/* Icône en haut à gauche */}
-                      <div className="absolute top-4 left-4 z-10">
-                        <Building2 className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="relative z-10">
+                      <div className="relative z-10 p-6 md:p-6 p-4">
                         {plan.popular && (
                           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FFE600] text-[#0D1B2A] px-4 py-1 rounded-full text-sm font-bold flex items-center">
                             <Star className="w-4 h-4 mr-1" />
@@ -155,16 +150,11 @@ export default function Services() {
                         </h3>
                         <div className="mb-4">
                           <p className="text-gray-200">{plan.frequency}</p>
-                          <p className="text-sm text-gray-300">
-                            {plan.schedule}
-                          </p>
+                          <p className="text-sm text-gray-300">{plan.schedule}</p>
                         </div>
                         <div className="text-4xl font-bold text-white mb-6">
                           {plan.price}
-                          <span className="text-lg text-gray-200">
-                            {' '}
-                            XAF
-                          </span>
+                          <span className="text-lg text-gray-200"> XAF</span>
                         </div>
                       </div>
                     </motion.div>
@@ -172,27 +162,32 @@ export default function Services() {
                 })}
               </div>
 
+              {/* Grande div "Services inclus" */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="wave-card glass-card p-8"
+                className="relative overflow-hidden rounded-2xl"
+                style={{
+                  backgroundImage: `url('https://images.pexels.com/photos/4108728/pexels-photo-4108728.jpeg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
               >
-                <h4 className="text-xl font-bold text-[#E92252] mb-4 text-center">
-                  {t.services.business.included}
-                </h4>
-                <ul className="space-y-3">
-                  {t.services.business.services.map((service, index) => (
-                    <li key={index} className="flex items-start justify-center">
-                      <Check className="w-5 h-5 text-[#E92252] mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300 text-center">
-                        {service}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6 flex justify-center">
-                  <div className="inline-block bg-[#E92252] text-white px-6 py-2 rounded-full font-medium">
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+                <div className="relative z-10 p-8 md:p-12 text-center">
+                  <h4 className="text-xl font-bold text-white mb-4">
+                    {t.services.business.included}
+                  </h4>
+                  <ul className="space-y-3">
+                    {t.services.business.services.map((service, index) => (
+                      <li key={index} className="flex items-center justify-center">
+                        <Check className="w-5 h-5 text-[#E92252] mr-3 flex-shrink-0" />
+                        <span className="text-gray-200">{service}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 inline-block bg-[#E92252] text-white px-6 py-2 rounded-full font-medium">
                     {t.services.business.materials}
                   </div>
                 </div>
@@ -200,6 +195,7 @@ export default function Services() {
             </motion.div>
           )}
 
+          {/* DOMICILE */}
           {activeTab === 1 && (
             <motion.div
               key="home"
@@ -208,7 +204,7 @@ export default function Services() {
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.4 }}
             >
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {homeFormulas.map((formula, index) => {
                   const bgImage = getBackgroundImage(`formula${index + 1}`);
                   return (
@@ -217,7 +213,7 @@ export default function Services() {
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="wave-card glass-card p-6 hover-lift relative text-center overflow-hidden"
+                      className="relative text-center overflow-hidden rounded-2xl"
                       style={{
                         backgroundImage: `url(${bgImage})`,
                         backgroundSize: 'cover',
@@ -225,10 +221,7 @@ export default function Services() {
                       }}
                     >
                       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-                      <div className="absolute top-4 left-4 z-10">
-                        <Home className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="relative z-10">
+                      <div className="relative z-10 p-6 md:p-6 p-4">
                         <h3 className="text-2xl font-bold text-white mb-4">
                           {formula.name}
                         </h3>
@@ -237,17 +230,12 @@ export default function Services() {
                             {formula.desc || formula.frequency}
                           </p>
                           {formula.note && (
-                            <p className="text-sm text-gray-300">
-                              {formula.note}
-                            </p>
+                            <p className="text-sm text-gray-300">{formula.note}</p>
                           )}
                         </div>
                         <div className="text-4xl font-bold text-white">
                           {formula.price}
-                          <span className="text-lg text-gray-200">
-                            {' '}
-                            XAF
-                          </span>
+                          <span className="text-lg text-gray-200"> XAF</span>
                         </div>
                       </div>
                     </motion.div>
@@ -259,25 +247,32 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="wave-card glass-card p-8"
+                className="relative overflow-hidden rounded-2xl"
+                style={{
+                  backgroundImage: `url('https://images.pexels.com/photos/4108728/pexels-photo-4108728.jpeg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
               >
-                <h4 className="text-xl font-bold text-[#E92252] mb-4 text-center">
-                  {t.services.business.included}
-                </h4>
-                <ul className="space-y-3">
-                  {t.services.home.tasks.map((task, index) => (
-                    <li key={index} className="flex items-start justify-center">
-                      <Check className="w-5 h-5 text-[#E92252] mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300 text-center">
-                        {task}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+                <div className="relative z-10 p-8 md:p-12 text-center">
+                  <h4 className="text-xl font-bold text-white mb-4">
+                    {t.services.business.included}
+                  </h4>
+                  <ul className="space-y-3">
+                    {t.services.home.tasks.map((task, index) => (
+                      <li key={index} className="flex items-center justify-center">
+                        <Check className="w-5 h-5 text-[#E92252] mr-3 flex-shrink-0" />
+                        <span className="text-gray-200">{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.div>
             </motion.div>
           )}
 
+          {/* SERVICES PONCTUELS */}
           {activeTab === 2 && (
             <motion.div
               key="onetime"
@@ -285,7 +280,7 @@ export default function Services() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.4 }}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {oneTimeServices.map((service, index) => {
                 const bgImage = getBackgroundImage(service.title.toLowerCase());
@@ -295,7 +290,7 @@ export default function Services() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="wave-card glass-card p-6 hover-lift relative text-center overflow-hidden"
+                    className="relative text-center overflow-hidden rounded-2xl"
                     style={{
                       backgroundImage: `url(${bgImage})`,
                       backgroundSize: 'cover',
@@ -303,10 +298,11 @@ export default function Services() {
                     }}
                   >
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-                    <div className="absolute top-4 left-4 z-10">
-                      <service.icon className="w-6 h-6 text-white" />
+                    {/* Icône originale en haut à gauche */}
+                    <div className="absolute top-4 left-4 z-20">
+                      <service.icon className="w-7 h-7 text-white" />
                     </div>
-                    <div className="relative z-10">
+                    <div className="relative z-10 p-6 md:p-6 p-4">
                       <h3 className="text-xl font-bold text-white mb-4">
                         {service.title}
                       </h3>
@@ -314,9 +310,7 @@ export default function Services() {
                         {service.items.map((item, idx) => (
                           <li key={idx} className="flex items-start justify-center">
                             <Check className="w-4 h-4 text-[#E92252] mr-2 mt-1 flex-shrink-0" />
-                            <span className="text-gray-200 text-sm">
-                              {item}
-                            </span>
+                            <span className="text-gray-200 text-sm">{item}</span>
                           </li>
                         ))}
                       </ul>
