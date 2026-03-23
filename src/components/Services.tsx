@@ -52,6 +52,27 @@ export default function Services() {
     { ...t.services.oneTime.hospital, icon: HeartPulse },
   ];
 
+  // Exemples d’images de fond pour chaque plan/formule/service
+  // Vous pouvez les remplacer par vos propres URLs
+  const getBackgroundImage = (title: string) => {
+    const images: Record<string, string> = {
+      premium: 'https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg',
+      honorable: 'https://images.pexels.com/photos/4108716/pexels-photo-4108716.jpeg',
+      standard: 'https://images.pexels.com/photos/4108717/pexels-photo-4108717.jpeg',
+      basic: 'https://images.pexels.com/photos/4108718/pexels-photo-4108718.jpeg',
+      formula1: 'https://images.pexels.com/photos/4108719/pexels-photo-4108719.jpeg',
+      formula2: 'https://images.pexels.com/photos/4108720/pexels-photo-4108720.jpeg',
+      formula3: 'https://images.pexels.com/photos/4108721/pexels-photo-4108721.jpeg',
+      formula4: 'https://images.pexels.com/photos/4108722/pexels-photo-4108722.jpeg',
+      cleaning: 'https://images.pexels.com/photos/4108723/pexels-photo-4108723.jpeg',
+      treatment: 'https://images.pexels.com/photos/4108724/pexels-photo-4108724.jpeg',
+      outdoor: 'https://images.pexels.com/photos/4108725/pexels-photo-4108725.jpeg',
+      industrial: 'https://images.pexels.com/photos/4108726/pexels-photo-4108726.jpeg',
+      hospital: 'https://images.pexels.com/photos/4108727/pexels-photo-4108727.jpeg',
+    };
+    return images[title] || 'https://images.pexels.com/photos/4108728/pexels-photo-4108728.jpeg';
+  };
+
   return (
     <section id="services" className="py-24 px-4 bg-white/70 dark:bg-[#0E0A1A]" ref={ref}>
       <div className="max-w-7xl mx-auto">
@@ -100,40 +121,51 @@ export default function Services() {
               transition={{ duration: 0.4 }}
             >
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                {businessPlans.map((plan, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className={`wave-card glass-card p-6 hover-lift relative ${
-                      plan.popular ? 'ring-2 ring-[#FFE600] scale-105' : ''
-                    }`}
-                  >
-                    {plan.popular && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FFE600] text-[#0D1B2A] px-4 py-1 rounded-full text-sm font-bold flex items-center">
-                        <Star className="w-4 h-4 mr-1" />
-                        {plan.badge}
+                {businessPlans.map((plan, index) => {
+                  const bgImage = getBackgroundImage(plan.name.toLowerCase());
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className={`wave-card glass-card p-6 hover-lift relative text-center ${
+                        plan.popular ? 'ring-2 ring-[#FFE600] scale-105' : ''
+                      }`}
+                      style={{
+                        backgroundImage: `url(${bgImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                      <div className="relative z-10">
+                        {plan.popular && (
+                          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FFE600] text-[#0D1B2A] px-4 py-1 rounded-full text-sm font-bold flex items-center">
+                            <Star className="w-4 h-4 mr-1" />
+                            {plan.badge}
+                          </div>
+                        )}
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                          {plan.name}
+                        </h3>
+                        <div className="mb-4">
+                          <p className="text-gray-200">{plan.frequency}</p>
+                          <p className="text-sm text-gray-300">
+                            {plan.schedule}
+                          </p>
+                        </div>
+                        <div className="text-4xl font-bold text-white mb-6">
+                          {plan.price}
+                          <span className="text-lg text-gray-200">
+                            {' '}
+                            XAF
+                          </span>
+                        </div>
                       </div>
-                    )}
-                    <h3 className="text-2xl font-bold text-[#E92252] mb-4">
-                      {plan.name}
-                    </h3>
-                    <div className="mb-4">
-                      <p className="text-gray-600 dark:text-gray-400">{plan.frequency}</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-500">
-                        {plan.schedule}
-                      </p>
-                    </div>
-                    <div className="text-4xl font-bold text-[#0D1B2A] dark:text-white mb-6">
-                      {plan.price}
-                      <span className="text-lg text-gray-600 dark:text-gray-400">
-                        {' '}
-                        XAF
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </div>
 
               <motion.div
@@ -142,19 +174,23 @@ export default function Services() {
                 transition={{ delay: 0.5 }}
                 className="wave-card glass-card p-8"
               >
-                <h4 className="text-xl font-bold text-[#E92252] mb-4">
+                <h4 className="text-xl font-bold text-[#E92252] mb-4 text-center">
                   {t.services.business.included}
                 </h4>
                 <ul className="space-y-3">
                   {t.services.business.services.map((service, index) => (
-                    <li key={index} className="flex items-start">
+                    <li key={index} className="flex items-start justify-center">
                       <Check className="w-5 h-5 text-[#E92252] mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{service}</span>
+                      <span className="text-gray-700 dark:text-gray-300 text-center">
+                        {service}
+                      </span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 inline-block bg-[#E92252] text-white px-6 py-2 rounded-full font-medium">
-                  {t.services.business.materials}
+                <div className="mt-6 flex justify-center">
+                  <div className="inline-block bg-[#E92252] text-white px-6 py-2 rounded-full font-medium">
+                    {t.services.business.materials}
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -169,36 +205,47 @@ export default function Services() {
               transition={{ duration: 0.4 }}
             >
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                {homeFormulas.map((formula, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="wave-card glass-card p-6 hover-lift"
-                  >
-                    <h3 className="text-2xl font-bold text-[#E92252] mb-4">
-                      {formula.name}
-                    </h3>
-                    <div className="mb-4">
-                      <p className="text-gray-600 dark:text-gray-400">
-                        {formula.desc || formula.frequency}
-                      </p>
-                      {formula.note && (
-                        <p className="text-sm text-gray-500 dark:text-gray-500">
-                          {formula.note}
-                        </p>
-                      )}
-                    </div>
-                    <div className="text-4xl font-bold text-[#0D1B2A] dark:text-white">
-                      {formula.price}
-                      <span className="text-lg text-gray-600 dark:text-gray-400">
-                        {' '}
-                        XAF
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
+                {homeFormulas.map((formula, index) => {
+                  const bgImage = getBackgroundImage(`formula${index + 1}`);
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="wave-card glass-card p-6 hover-lift relative text-center"
+                      style={{
+                        backgroundImage: `url(${bgImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                      <div className="relative z-10">
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                          {formula.name}
+                        </h3>
+                        <div className="mb-4">
+                          <p className="text-gray-200">
+                            {formula.desc || formula.frequency}
+                          </p>
+                          {formula.note && (
+                            <p className="text-sm text-gray-300">
+                              {formula.note}
+                            </p>
+                          )}
+                        </div>
+                        <div className="text-4xl font-bold text-white">
+                          {formula.price}
+                          <span className="text-lg text-gray-200">
+                            {' '}
+                            XAF
+                          </span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
 
               <motion.div
@@ -207,14 +254,16 @@ export default function Services() {
                 transition={{ delay: 0.5 }}
                 className="wave-card glass-card p-8"
               >
-                <h4 className="text-xl font-bold text-[#E92252] mb-4">
+                <h4 className="text-xl font-bold text-[#E92252] mb-4 text-center">
                   {t.services.business.included}
                 </h4>
                 <ul className="space-y-3">
                   {t.services.home.tasks.map((task, index) => (
-                    <li key={index} className="flex items-start">
+                    <li key={index} className="flex items-start justify-center">
                       <Check className="w-5 h-5 text-[#E92252] mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{task}</span>
+                      <span className="text-gray-700 dark:text-gray-300 text-center">
+                        {task}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -231,32 +280,43 @@ export default function Services() {
               transition={{ duration: 0.4 }}
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {oneTimeServices.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="wave-card glass-card p-6 hover-lift"
-                >
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-[#E92252] rounded-full mb-4">
-                    <service.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#E92252] mb-4">
-                    {service.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {service.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <Check className="w-4 h-4 text-[#E92252] mr-2 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300 text-sm">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+              {oneTimeServices.map((service, index) => {
+                const bgImage = getBackgroundImage(service.title.toLowerCase());
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="wave-card glass-card p-6 hover-lift relative text-center"
+                    style={{
+                      backgroundImage: `url(${bgImage})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center justify-center w-14 h-14 bg-[#E92252] rounded-full mb-4">
+                        <service.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4">
+                        {service.title}
+                      </h3>
+                      <ul className="space-y-2">
+                        {service.items.map((item, idx) => (
+                          <li key={idx} className="flex items-start justify-center">
+                            <Check className="w-4 h-4 text-[#E92252] mr-2 mt-1 flex-shrink-0" />
+                            <span className="text-gray-200 text-sm">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           )}
         </AnimatePresence>
