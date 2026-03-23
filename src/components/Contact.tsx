@@ -29,30 +29,37 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
+    // Préparer les données pour Formspree
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+    };
+
     try {
       const response = await fetch('https://formspree.io/f/mzdjlnny', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-        }),
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
         toast.success('Message envoyé avec succès !');
+        // Réinitialiser le formulaire
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
       } else {
-        toast.error('Erreur lors de l’envoi, veuillez réessayer.');
+        const errorData = await response.json();
+        console.error('Formspree error:', errorData);
+        toast.error('Erreur lors de l’envoi. Veuillez réessayer.');
       }
     } catch (error) {
-      console.error(error);
-      toast.error('Erreur réseau, veuillez réessayer.');
+      console.error('Network error:', error);
+      toast.error('Erreur de connexion. Vérifiez votre réseau.');
     } finally {
       setLoading(false);
     }
@@ -70,7 +77,11 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-22 px-4 bg-white dark:bg-[#0E0A1A]" ref={ref}>
+    <section
+      id="contact"
+      className="py-24 px-4 bg-white dark:bg-[#0E0A1A]"
+      ref={ref}
+    >
       <Toaster position="top-right" />
 
       <div className="max-w-7xl mx-auto">
@@ -88,7 +99,7 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Info et Map */}
+          {/* Colonne gauche : coordonnées + carte */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -145,7 +156,7 @@ export default function Contact() {
             </motion.div>
           </motion.div>
 
-          {/* Formulaire */}
+          {/* Colonne droite : formulaire */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -164,8 +175,71 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 className="w-full mt-18 max-w-lg bg-white/20 p-10 dark:bg-black/40 rounded-2xl shadow-xl space-y-6"
               >
-                {/* Les inputs restent inchangés */}
-                {/* ... */}
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3 }}>
+                  <label className="form-label">{t.contact.form.name}</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="form-input-premium"
+                  />
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.4 }}>
+                  <label className="form-label">{t.contact.form.email}</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="form-input-premium"
+                  />
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.5 }}>
+                  <label className="form-label">{t.contact.form.phone}</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="form-input-premium"
+                  />
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.6 }}>
+                  <label className="form-label">{t.contact.form.service}</label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="form-input-premium"
+                  >
+                    {t.contact.form.serviceOptions.map((option, index) => (
+                      <option key={index} value={index === 0 ? '' : option} className="text-black">
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.7 }}>
+                  <label className="form-label">{t.contact.form.message}</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="form-input-premium resize-none"
+                  />
+                </motion.div>
+
                 <motion.button
                   type="submit"
                   disabled={loading}
