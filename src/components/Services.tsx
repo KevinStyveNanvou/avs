@@ -52,8 +52,7 @@ export default function Services() {
     { ...t.services.oneTime.hospital, icon: HeartPulse },
   ];
 
-  // Exemples d’images de fond pour chaque plan/formule/service
-  // Vous pouvez les remplacer par vos propres URLs
+  // Mapping des images de fond (vous pouvez personnaliser les URLs)
   const getBackgroundImage = (title: string) => {
     const images: Record<string, string> = {
       premium: 'https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg',
@@ -129,7 +128,7 @@ export default function Services() {
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className={`wave-card glass-card p-6 hover-lift relative text-center ${
+                      className={`wave-card glass-card p-6 hover-lift relative text-center overflow-hidden ${
                         plan.popular ? 'ring-2 ring-[#FFE600] scale-105' : ''
                       }`}
                       style={{
@@ -138,7 +137,12 @@ export default function Services() {
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                      {/* Overlay noir 40% + flou */}
+                      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+                      {/* Icône en haut à gauche */}
+                      <div className="absolute top-4 left-4 z-10">
+                        <Building2 className="w-6 h-6 text-white" />
+                      </div>
                       <div className="relative z-10">
                         {plan.popular && (
                           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FFE600] text-[#0D1B2A] px-4 py-1 rounded-full text-sm font-bold flex items-center">
@@ -213,14 +217,17 @@ export default function Services() {
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="wave-card glass-card p-6 hover-lift relative text-center"
+                      className="wave-card glass-card p-6 hover-lift relative text-center overflow-hidden"
                       style={{
                         backgroundImage: `url(${bgImage})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+                      <div className="absolute top-4 left-4 z-10">
+                        <Home className="w-6 h-6 text-white" />
+                      </div>
                       <div className="relative z-10">
                         <h3 className="text-2xl font-bold text-white mb-4">
                           {formula.name}
@@ -288,18 +295,18 @@ export default function Services() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="wave-card glass-card p-6 hover-lift relative text-center"
+                    className="wave-card glass-card p-6 hover-lift relative text-center overflow-hidden"
                     style={{
                       backgroundImage: `url(${bgImage})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
                   >
-                    <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+                    <div className="absolute top-4 left-4 z-10">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
                     <div className="relative z-10">
-                      <div className="inline-flex items-center justify-center w-14 h-14 bg-[#E92252] rounded-full mb-4">
-                        <service.icon className="w-7 h-7 text-white" />
-                      </div>
                       <h3 className="text-xl font-bold text-white mb-4">
                         {service.title}
                       </h3>
