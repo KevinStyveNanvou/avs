@@ -9,7 +9,7 @@ export default function Image() {
     className="absolute inset-0 bg-cover bg-center bg-fixed"
     style={{
       backgroundImage:
-        "url('/public/img/side.jpg')",
+        "url('/img/side.jpg')",
     }}
   />
 </section>
