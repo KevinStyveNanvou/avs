@@ -110,7 +110,7 @@ export default function Hero() {
               transition={{ delay: 0.7 }}
               className="flex flex-wrap gap-3"
             >
-              {['+237 654 12 27 60', '+237 695 24 75 34', '+237 651 55 71 61'].map(
+              {['+237 653 50 90 41', '+237 657 02 98 54'].map(
                 (num, i) => (
                   <a
                     key={i}
