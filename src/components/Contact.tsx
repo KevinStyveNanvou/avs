@@ -34,13 +34,14 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(formData),
       });
-      toast.success('Message envoyé avec succès !');
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     } catch {
       toast.error('Erreur de connexion. Vérifiez votre réseau.');
     } finally {
       setLoading(false);
     }
+    
+      toast.success('Message envoyé avec succès !');
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
   // Numéro principal pour WhatsApp (premier du tableau)
