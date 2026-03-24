@@ -40,8 +40,10 @@ export default function Contact() {
       setLoading(false);
     }
     
-      toast.success('Message envoyé avec succès !');
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+    toast.success('Message envoyé avec succès !');
+    console.log('toast');
+    alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
   // Numéro principal pour WhatsApp (premier du tableau)
