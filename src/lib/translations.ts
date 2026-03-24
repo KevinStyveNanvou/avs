@@ -276,6 +276,8 @@ export const translations = {
     contact: {
       title: 'Contactez-nous',
       subtitle: 'Parlons de vos besoins en nettoyage',
+      sucess_toast: 'Merci pour votre message ! Nous vous contacterons bientôt.',
+      error_toast: 'Erreur de connexion. Vérifiez votre réseau.',
       form: {
         name: 'Nom complet',
         email: 'Adresse email',
@@ -590,6 +592,8 @@ export const translations = {
     contact: {
       title: 'Contact Us',
       subtitle: "Let's talk about your cleaning needs",
+      sucess_toast: 'Thank you for your message! We will contact you soon.',
+      error_toast: 'Connection error. Please check your network.',
       form: {
         name: 'Full name',
         email: 'Email address',

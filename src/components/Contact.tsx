@@ -35,12 +35,12 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        toast.success('Merci pour votre message ! Nous vous contacterons bientôt.');
+        toast.success(t.contact.sucess_toast);
       } else {
-        toast.error('Erreur de connexion. Vérifiez votre réseau.');
+        toast.error(t.contact.error_toast);
       }
     } catch {
-      toast.error('Erreur de connexion. Vérifiez votre réseau.');
+      toast.error(t.contact.error_toast);
     } finally {
       setLoading(false);
     }
