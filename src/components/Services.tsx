@@ -81,7 +81,7 @@ export default function Services() {
       '/img/desin.png',
       '/img/vert.png',
       '/img/moquet.png',
-      '/img/hosto.png',
+      '/img/hoto.png',
     ],
     included:
       'https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg',
