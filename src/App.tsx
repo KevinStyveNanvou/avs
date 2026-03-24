@@ -44,7 +44,7 @@ function App() {
                   margin: '1rem',
                   marginTop: '4rem',
                   zIndex: 9999,
-                  background: '#333',
+                  background: '#333/70',
                   color: '#fff',
                 }
               }}
