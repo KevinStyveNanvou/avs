@@ -94,7 +94,7 @@ export default function About() {
         </div>
 
         {/* ── Stats animées ──────────────────────────────────────────────── */}
-        <div className="flex space-between flex-wrap justify-center">
+        <div className="flex space-between w-full">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -105,7 +105,7 @@ export default function About() {
                 delay: 0.6 + index * 0.1,
                 ease: [0.34, 1.56, 0.64, 1],
               }}
-              className="wave-card  glass-card p-4 text-center hover-lift"
+              className="wave-card  w-full glass-card p-4 text-center hover-lift"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-[#E92252] rounded-full mb-4">
                 <stat.icon className="w-4 h-4 lg:w-8 lg:h-8 text-white" />
