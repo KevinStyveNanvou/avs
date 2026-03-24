@@ -71,7 +71,7 @@ export default function About() {
             <div className="wave-card bg-[#E92252] p-1">
               <div className="wave-card overflow-hidden h-80 bg-white dark:bg-[#0E0A1A]">
                 <img
-                  src="https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="/img/team.png"
                   alt="Équipe professionnelle AVS"
                   className="w-full h-full object-cover"
                 />
@@ -86,7 +86,7 @@ export default function About() {
             className="min-w-0"
           >
             <div className="wave-card glass-card p-8 overflow-hidden">
-              <p className="text-lg text-center text-gray-700 dark:text-gray-200 leading-relaxed break-words whitespace-normal">
+              <p className="m-10 text-lg text-center text-gray-700 dark:text-gray-200 leading-relaxed break-words whitespace-normal">
                 {t.about.content}
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function About() {
         </div>
 
         {/* ── Stats animées ──────────────────────────────────────────────── */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid-cols-3 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}

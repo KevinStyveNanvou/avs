@@ -34,12 +34,8 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(formData),
       });
-      if (response.ok) {
-        toast.success('Message envoyé avec succès !');
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-      } else {
-        toast.error("Erreur lors de l'envoi. Veuillez réessayer.");
-      }
+      toast.success('Message envoyé avec succès !');
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     } catch {
       toast.error('Erreur de connexion. Vérifiez votre réseau.');
     } finally {
