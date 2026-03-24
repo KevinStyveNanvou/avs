@@ -66,22 +66,22 @@ export default function Services() {
   const bgImages = {
     business: [
       'https://images.pexels.com/photos/4239118/pexels-photo-4239118.jpeg',
-      'https://images.pexels.com/photos/4107110/pexels-photo-4107110.jpeg',
-      'https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg',
+      '/img/clear.png',
+      '/img/standar.png',
       'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     ],
     home: [
       'https://images.pexels.com/photos/6195957/pexels-photo-6195957.jpeg',
-      'https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg',
-      'https://images.pexels.com/photos/6195958/pexels-photo-6195958.jpeg',
+      '/img/cusine.png',
+      '/img/habit.png',
       'https://images.pexels.com/photos/4099350/pexels-photo-4099350.jpeg',
     ],
     oneTime: [
-      'https://images.pexels.com/photos/4099469/pexels-photo-4099469.jpeg',
-      'https://images.pexels.com/photos/3765144/pexels-photo-3765144.jpeg',
-      'https://images.pexels.com/photos/1453499/pexels-photo-1453499.jpeg',
-      'https://images.pexels.com/photos/4107286/pexels-photo-4107286.jpeg',
-      'https://images.pexels.com/photos/3844790/pexels-photo-3844790.jpeg',
+      '/img/foteil.png',
+      '/img/desin.png',
+      '/img/vert.png',
+      '/img/moquet.png',
+      '/img/hosto.png',
     ],
     included:
       'https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg',
