@@ -85,7 +85,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
             className="min-w-0"
           >
-            <div className="wave-card glass-card p-8 overflow-hidden">
+            <div className="glass-card p-8 overflow-hidden">
               <p className="m-10 text-lg text-center text-gray-700 dark:text-gray-200 leading-relaxed break-words whitespace-normal">
                 {t.about.content}
               </p>
@@ -94,7 +94,7 @@ export default function About() {
         </div>
 
         {/* ── Stats animées ──────────────────────────────────────────────── */}
-        <div className="grid-cols-3 md:gap-8">
+        <div className="grid gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
