@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <Loading onComplete={() => setLoading(false)} />; // Affiche le loader tant que loading est true
   }
 
   return (
