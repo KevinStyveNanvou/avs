@@ -68,8 +68,8 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
           >
-            <div className="wave-card bg-[#E92252] p-1">
-              <div className="wave-card overflow-hidden h-80 bg-white dark:bg-[#0E0A1A]">
+            <div className="bg-[#E92252] p-1">
+              <div className="overflow-hidden h-80 bg-white dark:bg-[#0E0A1A]">
                 <img
                   src="/img/team.png"
                   alt="Équipe professionnelle AVS"
@@ -94,7 +94,7 @@ export default function About() {
         </div>
 
         {/* ── Stats animées ──────────────────────────────────────────────── */}
-        <div className="flex space-between flex-wrap justify-center gap-8">
+        <div className="flex space-between flex-wrap justify-center">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -105,7 +105,7 @@ export default function About() {
                 delay: 0.6 + index * 0.1,
                 ease: [0.34, 1.56, 0.64, 1],
               }}
-              className="wave-card glass-card p-4 text-center hover-lift"
+              className="wave-card  glass-card p-4 text-center hover-lift"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-[#E92252] rounded-full mb-4">
                 <stat.icon className="w-4 h-4 lg:w-8 lg:h-8 text-white" />
@@ -113,7 +113,7 @@ export default function About() {
               <div className="text-xl lg:text-5xl font-bold text-[#E92252] mb-2">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-gray-700 dark:text-gray-300 font-medium">
+              <p className="text-gray-700 text-sm lg:text-base dark:text-gray-300 font-medium">
                 {stat.label}
               </p>
             </motion.div>
