@@ -25,15 +25,15 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loading onComplete={() => setLoading(false)} />; // Affiche le loader tant que loading est true
-  }
-
   return (
     <ThemeProvider>
       <LanguageProvider>
         <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-gray-100 dark:bg-[#0E0A1A] text-gray-900 dark:text-white transition-colors duration-300">
           <BubbleBackground />
+          {loading? (
+            <Loading onComplete={() => setLoading(false)} />
+          ) : (
+            <>
           <Navbar />
           <main className="relative z-10 w-full max-w-full overflow-x-hidden">
             <Hero />
@@ -44,6 +44,8 @@ function App() {
             <Contact />
           </main>
           <Footer />
+          </>
+          )}
         </div>
       </LanguageProvider>
     </ThemeProvider>
