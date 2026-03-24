@@ -129,9 +129,9 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.75 }}
-              className="wave-card bg-[#E92252] p-1 mt-2"
+              className="md:wave-card lg:wave-card bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 mt-2"
             >
-              <div className="wave-card overflow-hidden h-56">
+              <div className="md:wave-card lg:wave-card overflow-hidden h-56">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9161887744684!2d11.516666!3d3.867722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTInMDMuOCJOIDExwrAzMScwMC4wIkU!5e0!3m2!1sfr!2scm!4v1234567890"
                   className="w-full h-full border-0"

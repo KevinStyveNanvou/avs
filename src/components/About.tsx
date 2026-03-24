@@ -68,8 +68,8 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
           >
-            <div className="bg-[#E92252] p-1">
-              <div className="overflow-hidden h-80 bg-white dark:bg-[#0E0A1A]">
+            <div className="md:wave-card lg:wave-card bg-gradient-to-br from-[#E92252] to-yellow-400 p-1">
+              <div className="md:wave-card lg:wave-card overflow-hidden h-80 bg-white dark:bg-[#0E0A1A]">
                 <img
                   src="/img/team.png"
                   alt="Équipe professionnelle AVS"
