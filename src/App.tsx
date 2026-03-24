@@ -42,6 +42,7 @@ function App() {
               toastOptions={{
                 style: {
                   margin: '1rem',
+                  zIndex: 9999,
                   background: '#333',
                   color: '#fff',
                 }
