@@ -31,34 +31,34 @@ function App() {
       <LanguageProvider>
         <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-gray-100 dark:bg-[#0E0A1A] text-gray-900 dark:text-white transition-colors duration-300">
           <BubbleBackground />
-          {loading? (
+          {loading ? (
             <Loading onComplete={() => setLoading(false)} />
           ) : (
             <>
-          <Navbar />
-          <main className="relative z-10 w-full max-w-full overflow-x-hidden">
-            <Toaster
-              position="top-right"
-              toastOptions={{
-                style: {
-                  margin: '1rem',
-                  marginTop: '4rem',
-                  zIndex: 9999,
-                  background: '#333/70',
-                  color: '#fff',
-                }
-              }}
-            />
+              <Navbar />
+              <main className="relative z-10 w-full max-w-full overflow-x-hidden">
+                <Toaster
+                  position="top-right"
+                  toastOptions={{
+                    style: {
+                      margin: '1rem',
+                      marginTop: '4rem',
+                      zIndex: 9999,
+                      background: 'rgba(51, 51, 51, 0.7)', // 0.7 = 70% d’opacité
+                      color: '#fff',
+                    }
+                  }}
+                />
 
-            <Hero />
-            <About />
-            <Image />
-            <Services />
-            <References />
-            <Contact />
-          </main>
-          <Footer />
-          </>
+                <Hero />
+                <About />
+                <Image />
+                <Services />
+                <References />
+                <Contact />
+              </main>
+              <Footer />
+            </>
           )}
         </div>
       </LanguageProvider>
