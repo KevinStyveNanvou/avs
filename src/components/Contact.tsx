@@ -34,13 +34,16 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(formData),
       });
+      if (response.ok) {
+        toast.success('Merci pour votre message ! Nous vous contacterons bientôt.');
+      } else {
+        toast.error('Erreur de connexion. Vérifiez votre réseau.');
+      }
     } catch {
       toast.error('Erreur de connexion. Vérifiez votre réseau.');
     } finally {
       setLoading(false);
     }
-    
-    toast.success('Merci pour votre message ! Nous vous contacterons bientôt.');
     setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
