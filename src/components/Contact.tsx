@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin, Phone, Mail, MessageCircle, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import toast, { Toaster } from 'react-hot-toast';
+import { toast } from 'sonner';
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -40,9 +40,7 @@ export default function Contact() {
       setLoading(false);
     }
     
-    toast.success('Message envoyé avec succès !');
-    console.log('toast');
-    alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+    toast.success('Merci pour votre message ! Nous vous contacterons bientôt.');
     setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
@@ -76,7 +74,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 px-4 bg-white dark:bg-[#0E0A1A]" ref={ref}>
-      <Toaster position="top-right" />
 
       <div className="max-w-7xl mx-auto">
 
@@ -278,7 +275,7 @@ export default function Contact() {
                         }}
                         initial={{ width: '0%' }}
                         animate={{ width: ['10%', '50%', '90%', '100%'] }}
-                        transition={{ duration: 0.4, ease: 'easeOut' }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
                       >
                         {/* Shimmer animé sur la barre */}
                         <motion.div

@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Image from './components/image';
 import Loading from './components/loading'; // <-- import du composant
+import { Toaster } from 'sonner';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -36,6 +37,17 @@ function App() {
             <>
           <Navbar />
           <main className="relative z-10 w-full max-w-full overflow-x-hidden">
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                style: {
+                  margin: '1rem',
+                  background: '#333',
+                  color: '#fff',
+                }
+              }}
+            />
+
             <Hero />
             <About />
             <Image />
