@@ -46,20 +46,13 @@ function AVSLogo() {
       <motion.div
         className="relative z-10 w-28 h-28 rounded-full flex items-center justify-center shadow-2xl"
         style={{
-          background: 'linear-gradient(135deg, #E92252 0%, #b01840 100%)',
+          background: 'linear-gradient(135deg, #E9E9E9 0%, #b0b8b0 100%)',
           boxShadow: '0 0 40px rgba(233,34,82,0.4), 0 8px 32px rgba(0,0,0,0.3)',
         }}
         animate={{ rotate: [0, 3, -3, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       >
         {/* Texte AVS */}
-        <span
-          className="text-white font-black tracking-tighter select-none"
-          style={{ fontSize: '2.2rem', letterSpacing: '-0.04em' }}
-        >
-          AVS
-        </span>
-
         <img
           src="/img/logo.png"
           alt="AVS Logo"

@@ -135,7 +135,7 @@ export default function Hero() {
             <div className="wave-card bg-[#E92252] p-1">
               <div className="wave-card bg-white dark:bg-[#0E0A1A] p-0 overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="/img/girl.png"
                   alt="AVS — Service de nettoyage professionnel à Yaoundé"
                   className="w-full h-full object-cover"
                 />
