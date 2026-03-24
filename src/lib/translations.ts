@@ -11,17 +11,17 @@ export const translations = {
       titles: [
         'Nettoyage Professionnel',
         'Entreprises & Particuliers',
-        'Résultats Garantis',
+        'Hygiène Garantie',
       ],
-      tagline: 'Le meilleur service de nettoyage à Yaoundé',
-      cta1: 'Nos Offres',
+      tagline: 'Le partenaire de confiance pour la propreté de vos espaces à Yaoundé',
+      cta1: 'Découvrir nos offres',
       cta2: 'Nous Contacter',
     },
     about: {
-      title: 'À Propos',
+      title: 'À Propos de Nous',
       subtitle: 'Qui sommes-nous ?',
       content:
-        "AVS - À Votre Service est une entreprise professionnelle de nettoyage basée à Yaoundé, Cameroun. Depuis notre création, nous nous engageons à offrir des services de qualité supérieure avec un personnel formé et qualifié. Notre mission est de garantir la propreté et l'hygiène de vos espaces, qu'ils soient professionnels ou résidentiels.",
+        "AVS – À Votre Service est une entreprise professionnelle de nettoyage basée à Yaoundé, Cameroun. Depuis notre création, nous nous engageons à offrir des prestations d'hygiène de qualité supérieure, assurées par un personnel qualifié, formé et rigoureux. Que vous soyez une entreprise, un particulier, un établissement hospitalier ou industriel, nous proposons des solutions sur mesure adaptées à chaque environnement.",
       stats: {
         clients: 'Clients Satisfaits',
         years: "Années d'Expérience",
@@ -30,85 +30,144 @@ export const translations = {
     },
     services: {
       title: 'Nos Services',
-      subtitle: 'Des solutions adaptées à tous vos besoins',
+      subtitle: 'Des solutions professionnelles adaptées à chaque besoin',
       tabs: {
         business: 'Offre Entreprises',
         home: 'Services à Domicile',
         oneTime: 'Services Ponctuels',
+        sofa: 'Canapé & Désinfection',
       },
+
+      // ─── OFFRE ENTREPRISES ───────────────────────────────────────────────
       business: {
+        intro:
+          'Nos offres entreprises couvrent des surfaces de 50 à 100 m², du lundi au vendredi, de 7h30 à 13h30. Matériel et produits d\'entretien inclus.',
         premium: {
           name: 'PREMIUM',
-          frequency: '7 jours / 7',
-          schedule: '6h à 16h',
-          price: '380.000',
+          frequency: 'Tous les jours',
+          days: 'Du lundi au vendredi',
+          surface: '50 à 100 m²',
+          hours: '7h30 – 13h30',
+          price: '100.000',
           badge: 'Populaire',
         },
         honorable: {
           name: 'HONORABLE',
-          frequency: '6 jours / 7',
-          schedule: 'Du lundi au samedi',
-          price: '320.000',
+          frequency: '03 fois / semaine',
+          days: 'Du lundi au vendredi',
+          surface: '50 à 100 m²',
+          hours: '7h30 – 13h30',
+          price: '75.000',
         },
         standard: {
           name: 'STANDARD',
-          frequency: '5 jours / 7',
-          schedule: 'Du lundi au vendredi',
-          price: '280.000',
+          frequency: '02 fois / semaine',
+          days: 'Du lundi au vendredi',
+          surface: '50 à 100 m²',
+          hours: '7h30 – 13h30',
+          price: '50.000',
         },
         basic: {
           name: 'BASIQUE',
-          frequency: '3 jours / 7',
-          schedule: 'Lundi, Mercredi, Vendredi',
-          price: '190.000',
+          frequency: '01 fois / semaine',
+          days: 'Du lundi au vendredi',
+          surface: '50 à 100 m²',
+          hours: '7h30 – 13h30',
+          price: '30.000',
         },
-        included: 'Services inclus :',
+        included: 'Services inclus dans toutes les offres :',
         services: [
-          'Entretien et nettoyage des sols (carrelage et moquettes)',
+          'Entretien et nettoyage des sols : carrelage et moquettes',
           'Nettoyage des vitres et plafonds',
           'Entretien du mobilier',
           'Entretien et désinfection des toilettes',
-          'Ramassage poubelles',
+          'Ramassage des poubelles',
         ],
-        materials: 'Matériel et produits inclus',
+        materials: '✔ Matériel et produits d\'entretien inclus dans l\'offre',
       },
+
+      // ─── SERVICES À DOMICILE ─────────────────────────────────────────────
       home: {
+        intro:
+          'Nos formules à domicile s\'adaptent à votre rythme de vie. Horaires : 7h30 – 14h30, du lundi au vendredi.',
         formula1: {
           name: 'Formule 1',
-          desc: 'Mise à disposition CDD/CDI',
+          desc: 'Mise à disposition d\'un agent qualifié (CDD / CDI)',
           price: '30.000',
-          note: 'Ouverture dossier',
+          note: 'Frais d\'ouverture de dossier',
+          hours: 'Selon accord client',
+          tasks: [
+            'Personnel formé et qualifié mis à la disposition du client',
+            'Contrat CDD ou CDI selon les besoins',
+          ],
         },
         formula2: {
           name: 'Formule 2',
-          frequency: '4x/semaine (16j/mois)',
+          frequency: '04 fois / semaine',
+          days: 'Lundi au vendredi — 16 jours / mois',
+          hours: '7h30 – 14h30',
           price: '60.000',
+          note: 'Paiement mensuel',
+          tasks: [
+            'Nettoyage des sols : carreaux / moquettes',
+            'Nettoyage des vitres et plafonds',
+            'Entretien et désinfection du domicile',
+            'Entretien du mobilier',
+            'Nettoyage cuisine + vaisselle',
+            'Nettoyage et rangement des chambres selon le client',
+            'Lessive et repassage',
+            'Courses éventuellement',
+            'Nettoyage et désinfection des toilettes',
+            'Ramassage poubelles',
+          ],
         },
         formula3: {
           name: 'Formule 3',
-          frequency: '3x/semaine (12j/mois)',
+          frequency: '03 fois / semaine',
+          days: 'Lundi au vendredi — 12 jours / mois',
+          hours: '7h30 – 14h30',
           price: '50.000',
+          note: 'Paiement mensuel',
+          tasks: [
+            'Entretien et désinfection du domicile',
+            'Nettoyage des sols : carreaux / moquettes',
+            'Nettoyage vitres et plafonds',
+            'Entretien + désinfection des toilettes',
+            'Nettoyage cuisine + vaisselle',
+            'Nettoyage + rangement des chambres selon le client',
+            'Courses éventuellement',
+            'Ramassage poubelles',
+          ],
         },
         formula4: {
           name: 'Formule 4',
-          frequency: '2x/semaine (8j/mois)',
+          frequency: '02 fois / semaine',
+          days: 'Lundi au vendredi — 08 jours / mois',
+          hours: '7h30 – 14h30',
           price: '40.000',
+          note: 'Paiement mensuel',
+          tasks: [
+            'Entretien et désinfection du domicile',
+            'Nettoyage des sols : carreaux / moquettes',
+            'Nettoyage vitres et plafonds',
+            'Entretien + désinfection des toilettes',
+            'Nettoyage cuisine + vaisselle',
+            'Ramassage poubelles',
+          ],
         },
-        tasks: [
-          'Nettoyage intérieur complet',
-          'Lavage et repassage du linge',
-          'Préparation des repas',
-          'Garde d\'enfants (optionnel)',
-          'Courses et commissions',
-        ],
       },
+
+      // ─── SERVICES PONCTUELS ──────────────────────────────────────────────
       oneTime: {
+        note: 'N.B : Pour tous les services, le devis se fait après visite du site à nettoyer.',
+        particuliers: 'Pour les particuliers',
+        professionnels: 'Pour les professionnels',
         cleaning: {
           title: 'Nettoyage des logements',
           items: [
-            'Lavage et nettoyage de sols',
-            'Shampooing moquettes et tapis',
-            'Vidange de fosses septiques',
+            'Lavage et décapage de sols et revêtements',
+            'Shampoing fauteuils, tapis, chaises',
+            'Vidange des fosses septiques',
             'Nettoyage après chantier',
           ],
         },
@@ -117,39 +176,69 @@ export const translations = {
           items: [
             'Dératisation',
             'Désinfection',
-            'Désinsectisation',
-            'Traitement anti-termites',
+            'Désintoxication',
+            'Etc.',
           ],
         },
         outdoor: {
           title: 'Espaces verts & assainissement',
           items: [
-            'Coupage et entretien des herbes',
-            'Entretien de jardins',
-            'Gestion des déchets',
-            'Entretien des espaces verts',
+            'Coupage d\'herbes',
+            'Création et entretien de jardins',
+            'Vidange des déchets (poubelles, etc.)',
+            'Etc.',
           ],
         },
         industrial: {
           title: 'Nettoyage industriel et mécanisé',
           items: [
-            'Nettoyage de bureaux',
-            'Traitement de sols et moquettes',
-            'Nettoyage de vitres en hauteur',
-            'Entretien sanitaire professionnel',
+            'Entretien des bureaux et locaux',
+            'Lavage et décapage des sols et revêtements',
+            'Shampoing moquette, tapis, chaises, fauteuil',
+            'Nettoyage de vitres',
+            'Entretien sanitaire',
           ],
         },
         hospital: {
           title: 'Milieu hospitalier',
           items: [
-            'Désinfection des surfaces',
-            'Nettoyage des sols médicaux',
-            'Traitement des vitres',
-            'Assainissement et aération',
+            'Nettoyage et dépoussiérage des surfaces',
+            'Nettoyage des sols et vitres',
+            'Entretien sanitaire',
+            'Aération des pièces',
+            'Etc.',
           ],
         },
       },
+
+      // ─── CANAPÉ & DÉSINFECTION ───────────────────────────────────────────
+      sofa: {
+        sofaTitle: 'Nettoyage Canapé Cuir ou Tissu',
+        sofaNote: 'À partir de 07 places : sur devis',
+        sofaItems: [
+          { label: '01 Place', price: '15.000 FCFA' },
+          { label: '02 Places', price: '20.000 FCFA' },
+          { label: '03 Places', price: '25.000 FCFA' },
+          { label: '04 – 05 Places', price: '45.000 FCFA' },
+          { label: 'Salon complet', price: '60.000 FCFA' },
+        ],
+        extrasTitle: 'Autres prestations',
+        extras: [
+          { label: 'Moquettes', price: 'À partir de 15.000 FCFA (selon dimension)' },
+          { label: 'Voiture (Intérieur)', price: 'À partir de 15.000 FCFA' },
+        ],
+        disinfTitle: 'Désinfection – Désinsectisation & Dératisation',
+        disinfItems: [
+          { label: 'Chambre', price: '10.000 FCFA' },
+          { label: 'Douche', price: '5.000 FCFA' },
+          { label: 'Magasin', price: '5.000 FCFA' },
+          { label: 'Salon', price: '15.000 FCFA' },
+          { label: 'Cuisine', price: '15.000 FCFA' },
+        ],
+      },
     },
+
+    // ─── RÉFÉRENCES ──────────────────────────────────────────────────────────
     references: {
       title: 'Nos Références',
       subtitle: 'Ils nous font confiance',
@@ -170,7 +259,7 @@ export const translations = {
           name: 'Sandrine T.',
           role: 'Particulier',
           text: 'Très satisfaite du service à domicile. Mon appartement n\'a jamais été aussi propre. Je recommande vivement !',
-          rating: 5,
+          rating: 4,
         },
       ],
       clients: [
@@ -182,40 +271,55 @@ export const translations = {
         'Industries',
       ],
     },
+
+    // ─── CONTACT ─────────────────────────────────────────────────────────────
     contact: {
       title: 'Contactez-nous',
-      subtitle: 'Parlons de vos besoins',
+      subtitle: 'Parlons de vos besoins en nettoyage',
       form: {
         name: 'Nom complet',
-        email: 'Email',
-        phone: 'Téléphone',
-        service: 'Type de service',
-        message: 'Message',
-        submit: 'Envoyer',
+        email: 'Adresse email',
+        phone: 'Numéro de téléphone',
+        service: 'Type de service souhaité',
+        message: 'Votre message',
+        submit: 'Envoyer la demande',
         serviceOptions: [
           'Sélectionnez un service',
           'Offre Entreprises',
           'Service à Domicile',
+          'Nettoyage Canapé / Moquette',
+          'Désinfection / Dératisation',
           'Service Ponctuel',
           'Autre demande',
         ],
       },
       info: {
         address: 'Yaoundé, Mobil Essos, Cameroun',
-        phone: '+237 654.12.27.60',
+        phones: [
+          '+237 654 12 27 60',
+          '+237 695 24 75 34',
+          '+237 651 55 71 61',
+        ],
         email: '237avotreservice@gmail.com',
-        whatsapp: 'WhatsApp',
+        whatsapp: 'Écrire sur WhatsApp',
       },
     },
+
+    // ─── FOOTER ──────────────────────────────────────────────────────────────
     footer: {
-      tagline: 'Votre partenaire de confiance pour tous vos besoins de nettoyage',
+      tagline: 'Votre partenaire de confiance pour la propreté et l\'hygiène de vos espaces.',
       quickLinks: 'Liens rapides',
       copyright: '© 2026 AVS — À Votre Service. Tous droits réservés.',
     },
+
     whatsapp: {
-      message: 'Besoin d\'aide ? Contactez-nous sur WhatsApp',
+      message: 'Bonjour AVS, je souhaite obtenir des informations sur vos services de nettoyage.',
     },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  //  ENGLISH
+  // ══════════════════════════════════════════════════════════════════════════
   en: {
     nav: {
       home: 'Home',
@@ -227,18 +331,18 @@ export const translations = {
     hero: {
       titles: [
         'Professional Cleaning',
-        'For Businesses & Homes',
-        'Guaranteed Results',
+        'Businesses & Households',
+        'Guaranteed Hygiene',
       ],
-      tagline: "Yaoundé's Premier Cleaning Service",
-      cta1: 'Our Services',
+      tagline: 'Your trusted partner for clean and healthy spaces in Yaoundé',
+      cta1: 'Explore Our Plans',
       cta2: 'Contact Us',
     },
     about: {
       title: 'About Us',
       subtitle: 'Who we are',
       content:
-        'AVS - À Votre Service is a professional cleaning company based in Yaoundé, Cameroon. Since our establishment, we have been committed to providing superior quality services with trained and qualified staff. Our mission is to guarantee the cleanliness and hygiene of your spaces, whether professional or residential.',
+        'AVS – À Votre Service is a professional cleaning company based in Yaoundé, Cameroon. Since our founding, we have been committed to delivering superior hygiene services through trained, qualified, and dedicated staff. Whether you are a business, a household, a hospital, or an industrial facility, we offer tailored solutions designed for every environment.',
       stats: {
         clients: 'Satisfied Clients',
         years: 'Years of Experience',
@@ -247,39 +351,52 @@ export const translations = {
     },
     services: {
       title: 'Our Services',
-      subtitle: 'Solutions tailored to all your needs',
+      subtitle: 'Professional solutions tailored to every need',
       tabs: {
         business: 'Business Plans',
         home: 'Home Services',
         oneTime: 'One-Time Services',
+        sofa: 'Sofa & Disinfection',
       },
+
+      // ─── BUSINESS PLANS ──────────────────────────────────────────────────
       business: {
+        intro:
+          'Our business plans cover areas of 50 to 100 m², Monday to Friday, from 7:30 AM to 1:30 PM. Equipment and cleaning products included.',
         premium: {
           name: 'PREMIUM',
-          frequency: '7 days / 7',
-          schedule: '6am to 4pm',
-          price: '380,000',
+          frequency: 'Every day',
+          days: 'Monday to Friday',
+          surface: '50 to 100 m²',
+          hours: '7:30 AM – 1:30 PM',
+          price: '100,000',
           badge: 'Popular',
         },
         honorable: {
           name: 'HONORABLE',
-          frequency: '6 days / 7',
-          schedule: 'Monday to Saturday',
-          price: '320,000',
+          frequency: '3 times / week',
+          days: 'Monday to Friday',
+          surface: '50 to 100 m²',
+          hours: '7:30 AM – 1:30 PM',
+          price: '75,000',
         },
         standard: {
           name: 'STANDARD',
-          frequency: '5 days / 7',
-          schedule: 'Monday to Friday',
-          price: '280,000',
+          frequency: '2 times / week',
+          days: 'Monday to Friday',
+          surface: '50 to 100 m²',
+          hours: '7:30 AM – 1:30 PM',
+          price: '50,000',
         },
         basic: {
           name: 'BASIC',
-          frequency: '3 days / 7',
-          schedule: 'Monday, Wednesday, Friday',
-          price: '190,000',
+          frequency: '1 time / week',
+          days: 'Monday to Friday',
+          surface: '50 to 100 m²',
+          hours: '7:30 AM – 1:30 PM',
+          price: '30,000',
         },
-        included: 'Included services:',
+        included: 'Services included in all plans:',
         services: [
           'Floor maintenance and cleaning (tiles and carpets)',
           'Window and ceiling cleaning',
@@ -287,86 +404,162 @@ export const translations = {
           'Toilet maintenance and disinfection',
           'Waste collection',
         ],
-        materials: 'Equipment and products included',
+        materials: '✔ Equipment and cleaning products included',
       },
+
+      // ─── HOME SERVICES ───────────────────────────────────────────────────
       home: {
+        intro:
+          'Our home formulas adapt to your lifestyle. Hours: 7:30 AM – 2:30 PM, Monday to Friday.',
         formula1: {
           name: 'Formula 1',
-          desc: 'Fixed-term/Permanent contract',
+          desc: 'Dedicated qualified agent (Fixed-term / Permanent contract)',
           price: '30,000',
           note: 'File opening fee',
+          hours: 'As agreed with client',
+          tasks: [
+            'Trained and qualified staff placed at client\'s disposal',
+            'Fixed-term (CDD) or permanent (CDI) contract as needed',
+          ],
         },
         formula2: {
           name: 'Formula 2',
-          frequency: '4x/week (16 days/month)',
+          frequency: '4 times / week',
+          days: 'Monday to Friday — 16 days / month',
+          hours: '7:30 AM – 2:30 PM',
           price: '60,000',
+          note: 'Monthly payment',
+          tasks: [
+            'Floor cleaning: tiles / carpets',
+            'Window and ceiling cleaning',
+            'Home sanitation and disinfection',
+            'Furniture maintenance',
+            'Kitchen cleaning + dishes',
+            'Bedroom cleaning and tidying as per client',
+            'Laundry and ironing',
+            'Errands occasionally',
+            'Toilet cleaning and disinfection',
+            'Waste collection',
+          ],
         },
         formula3: {
           name: 'Formula 3',
-          frequency: '3x/week (12 days/month)',
+          frequency: '3 times / week',
+          days: 'Monday to Friday — 12 days / month',
+          hours: '7:30 AM – 2:30 PM',
           price: '50,000',
+          note: 'Monthly payment',
+          tasks: [
+            'Home sanitation and disinfection',
+            'Floor cleaning: tiles / carpets',
+            'Window and ceiling cleaning',
+            'Toilet maintenance and disinfection',
+            'Kitchen cleaning + dishes',
+            'Bedroom cleaning and tidying as per client',
+            'Errands occasionally',
+            'Waste collection',
+          ],
         },
         formula4: {
           name: 'Formula 4',
-          frequency: '2x/week (8 days/month)',
+          frequency: '2 times / week',
+          days: 'Monday to Friday — 8 days / month',
+          hours: '7:30 AM – 2:30 PM',
           price: '40,000',
+          note: 'Monthly payment',
+          tasks: [
+            'Home sanitation and disinfection',
+            'Floor cleaning: tiles / carpets',
+            'Window and ceiling cleaning',
+            'Toilet maintenance and disinfection',
+            'Kitchen cleaning + dishes',
+            'Waste collection',
+          ],
         },
-        tasks: [
-          'Complete interior cleaning',
-          'Laundry and ironing',
-          'Meal preparation',
-          'Childcare (optional)',
-          'Shopping and errands',
-        ],
       },
+
+      // ─── ONE-TIME SERVICES ───────────────────────────────────────────────
       oneTime: {
+        note: 'N.B: For all services, a quote is provided after an on-site visit.',
+        particuliers: 'For individuals',
+        professionnels: 'For professionals',
         cleaning: {
           title: 'Home Cleaning',
           items: [
-            'Floor washing and cleaning',
-            'Carpet and rug shampooing',
+            'Floor washing and stripping',
+            'Armchair, carpet and chair shampooing',
             'Septic tank emptying',
             'Post-construction cleaning',
           ],
         },
         treatment: {
-          title: 'Pest Control',
+          title: 'Pest & Sanitary Treatments',
           items: [
             'Rat extermination',
             'Disinfection',
-            'Pest control',
-            'Termite treatment',
+            'Detoxification',
+            'Etc.',
           ],
         },
         outdoor: {
           title: 'Green spaces & sanitation',
           items: [
-            'Grass cutting and maintenance',
-            'Garden maintenance',
-            'Waste management',
-            'Green space upkeep',
+            'Grass cutting',
+            'Garden creation and maintenance',
+            'Waste and garbage removal',
+            'Etc.',
           ],
         },
         industrial: {
-          title: 'Industrial & mechanized cleaning',
+          title: 'Industrial & Mechanized Cleaning',
           items: [
-            'Office cleaning',
-            'Floor and carpet treatment',
-            'High-rise window cleaning',
-            'Professional sanitary maintenance',
+            'Office and premises maintenance',
+            'Floor and surface washing and stripping',
+            'Carpet, rug, chair and armchair shampooing',
+            'Window cleaning',
+            'Sanitary maintenance',
           ],
         },
         hospital: {
-          title: 'Hospital environments',
+          title: 'Hospital Environments',
           items: [
-            'Surface disinfection',
-            'Medical floor cleaning',
-            'Window treatment',
-            'Sanitation and ventilation',
+            'Surface dusting and cleaning',
+            'Floor and window cleaning',
+            'Sanitary maintenance',
+            'Room ventilation',
+            'Etc.',
           ],
         },
       },
+
+      // ─── SOFA & DISINFECTION ─────────────────────────────────────────────
+      sofa: {
+        sofaTitle: 'Leather or Fabric Sofa Cleaning',
+        sofaNote: 'From 7 seats: quote on request',
+        sofaItems: [
+          { label: '01 Seat', price: '15,000 FCFA' },
+          { label: '02 Seats', price: '20,000 FCFA' },
+          { label: '03 Seats', price: '25,000 FCFA' },
+          { label: '04 – 05 Seats', price: '45,000 FCFA' },
+          { label: 'Full living room', price: '60,000 FCFA' },
+        ],
+        extrasTitle: 'Additional services',
+        extras: [
+          { label: 'Carpets', price: 'From 15,000 FCFA (depending on size)' },
+          { label: 'Car interior', price: 'From 15,000 FCFA' },
+        ],
+        disinfTitle: 'Disinfection – Pest Control & Extermination',
+        disinfItems: [
+          { label: 'Bedroom', price: '10,000 FCFA' },
+          { label: 'Bathroom', price: '5,000 FCFA' },
+          { label: 'Store / Shop', price: '5,000 FCFA' },
+          { label: 'Living room', price: '15,000 FCFA' },
+          { label: 'Kitchen', price: '15,000 FCFA' },
+        ],
+      },
     },
+
+    // ─── REFERENCES ──────────────────────────────────────────────────────────
     references: {
       title: 'Our References',
       subtitle: 'They trust us',
@@ -392,38 +585,49 @@ export const translations = {
       ],
       clients: ['Banks', 'Hospitals', 'Offices', 'Hotels', 'Schools', 'Industries'],
     },
+
+    // ─── CONTACT ─────────────────────────────────────────────────────────────
     contact: {
       title: 'Contact Us',
-      subtitle: "Let's discuss your needs",
+      subtitle: "Let's talk about your cleaning needs",
       form: {
         name: 'Full name',
-        email: 'Email',
-        phone: 'Phone',
+        email: 'Email address',
+        phone: 'Phone number',
         service: 'Service type',
-        message: 'Message',
-        submit: 'Send',
+        message: 'Your message',
+        submit: 'Send request',
         serviceOptions: [
           'Select a service',
           'Business Plan',
           'Home Service',
+          'Sofa / Carpet Cleaning',
+          'Disinfection / Pest Control',
           'One-Time Service',
           'Other request',
         ],
       },
       info: {
         address: 'Yaoundé, Mobil Essos, Cameroon',
-        phone: '+237 654.12.27.60',
+        phones: [
+          '+237 654 12 27 60',
+          '+237 695 24 75 34',
+          '+237 651 55 71 61',
+        ],
         email: '237avotreservice@gmail.com',
-        whatsapp: 'WhatsApp',
+        whatsapp: 'Chat on WhatsApp',
       },
     },
+
+    // ─── FOOTER ──────────────────────────────────────────────────────────────
     footer: {
-      tagline: 'Your trusted partner for all your cleaning needs',
+      tagline: 'Your trusted partner for cleanliness and hygiene in every space.',
       quickLinks: 'Quick links',
       copyright: '© 2026 AVS — À Votre Service. All rights reserved.',
     },
+
     whatsapp: {
-      message: 'Need help? Contact us on WhatsApp',
+      message: 'Hello AVS, I would like to get information about your cleaning services.',
     },
   },
 };

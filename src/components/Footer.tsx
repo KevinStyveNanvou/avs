@@ -1,37 +1,40 @@
-import { Sparkles, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+// components/Footer.tsx
+import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const quickLinks = [
-    { label: t.nav.home, id: 'accueil' },
-    { label: t.nav.about, id: 'apropos' },
-    { label: t.nav.services, id: 'services' },
+    { label: t.nav.home,       id: 'accueil'    },
+    { label: t.nav.about,      id: 'apropos'    },
+    { label: t.nav.services,   id: 'services'   },
     { label: t.nav.references, id: 'references' },
-    { label: t.nav.contact, id: 'contact' },
+    { label: t.nav.contact,    id: 'contact'    },
   ];
 
+  const primaryPhone = t.contact.info.phones[0].replace(/\s/g, '').replace('+', '');
+  const whatsappUrl = `https://wa.me/${primaryPhone}?text=${encodeURIComponent(t.whatsapp.message)}`;
+
   return (
-    <footer className="relative bg-gray-300 dark:bg-[#0E0A1A] text-black dark:text-white pt-16 pb-8 px-4 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
+    <footer className="relative bg-gray-100 dark:bg-[#0A0614] text-gray-800 dark:text-white pt-16 pb-8 px-4 overflow-hidden">
+
+      {/* Bulles décoratives en fond */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
             className="bubble bubble-light"
             style={{
-              width: `${Math.random() * 60 + 30}px`,
-              height: `${Math.random() * 60 + 30}px`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${Math.random() * 10 + 15}s`,
+              width:  `${40 + i * 12}px`,
+              height: `${40 + i * 12}px`,
+              left:   `${10 + i * 20}%`,
+              animationDelay:    `${i * 1.5}s`,
+              animationDuration: `${15 + i * 3}s`,
             }}
           />
         ))}
@@ -39,16 +42,20 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
-          <div>
-            <div className="flex items-center space-x-3 mb-4">
-                <img src="/img/logo.png" alt="Logo" className="w-23 h-21" />
 
+          {/* ── Colonne 1 : logo + tagline ──────────────────────────────── */}
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <img src="/img/logo.png" alt="AVS Logo" className="h-16 w-auto" />
             </div>
-            <p className="text-gray-400 leading-relaxed">{t.footer.tagline}</p>
+            <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              {t.footer.tagline}
+            </p>
           </div>
 
+          {/* ── Colonne 2 : liens rapides ────────────────────────────────── */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-[#5BC4F0] dark:text-[#7B2FBE]">
+            <h3 className="text-base font-bold mb-5 text-[#5BC4F0] dark:text-[#7B2FBE] uppercase tracking-wide">
               {t.footer.quickLinks}
             </h3>
             <ul className="space-y-2">
@@ -56,7 +63,7 @@ export default function Footer() {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.id)}
-                    className="text-gray-400 hover:text-[#5BC4F0] dark:hover:text-[#D4AF37] transition-colors"
+                    className="text-gray-500 dark:text-gray-400 hover:text-[#E92252] dark:hover:text-[#D4AF37] transition-colors text-sm"
                   >
                     {link.label}
                   </button>
@@ -65,49 +72,82 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* ── Colonne 3 : contact + réseaux ───────────────────────────── */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-[#5BC4F0] dark:text-[#7B2FBE]">
+            <h3 className="text-base font-bold mb-5 text-[#5BC4F0] dark:text-[#7B2FBE] uppercase tracking-wide">
               {t.nav.contact}
             </h3>
-            <div className="space-y-2 text-gray-400">
-              <p>{t.contact.info.address}</p>
-              <p>{t.contact.info.phone}</p>
-              <p>+237 695.24.75.34</p>
-              <p>+237 651.55.71.61</p>
-              <p>{t.contact.info.email}</p>
-            </div>
-            <div className="flex space-x-4 mt-6">
-              <a
-                href="#"
-                className="w-10 h-10 bg-[#5BC4F0] dark:bg-[#7B2FBE] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-[#5BC4F0] dark:bg-[#7B2FBE] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-[#5BC4F0] dark:bg-[#7B2FBE] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-[#5BC4F0] dark:bg-[#7B2FBE] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+
+            <ul className="space-y-3 mb-6">
+              {/* Adresse */}
+              <li className="flex items-start gap-2 text-gray-500 dark:text-gray-400 text-sm">
+                <MapPin className="w-4 h-4 text-[#E92252] mt-0.5 flex-shrink-0" />
+                <span>{t.contact.info.address}</span>
+              </li>
+
+              {/* Tous les numéros */}
+              {t.contact.info.phones.map((num, i) => (
+                <li key={i}>
+                  <a
+                    href={`tel:${num.replace(/\s/g, '')}`}
+                    className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-[#E92252] dark:hover:text-[#D4AF37] transition-colors text-sm"
+                  >
+                    <Phone className="w-4 h-4 text-[#E92252] flex-shrink-0" />
+                    {num}
+                  </a>
+                </li>
+              ))}
+
+              {/* Email */}
+              <li>
+                <a
+                  href={`mailto:${t.contact.info.email}`}
+                  className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-[#E92252] dark:hover:text-[#D4AF37] transition-colors text-sm"
+                >
+                  <Mail className="w-4 h-4 text-[#E92252] flex-shrink-0" />
+                  {t.contact.info.email}
+                </a>
+              </li>
+            </ul>
+
+            {/* Réseaux sociaux */}
+            <div className="flex gap-3">
+              {[
+                { Icon: Facebook,  href: '#' },
+                { Icon: Instagram, href: '#' },
+                { Icon: Linkedin,  href: '#' },
+                { Icon: Twitter,   href: '#' },
+              ].map(({ Icon, href }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-[#5BC4F0] dark:bg-[#7B2FBE] rounded-full flex items-center justify-center hover:scale-110 hover:bg-[#E92252] dark:hover:bg-[#D4AF37] transition-all duration-300"
+                >
+                  <Icon className="w-4 h-4 text-white" />
+                </a>
+              ))}
             </div>
           </div>
+
         </div>
 
-        <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>{t.footer.copyright}</p>
+        {/* ── Barre de copyright ────────────────────────────────────────── */}
+        <div className="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-gray-400 text-sm text-center sm:text-left">
+            {t.footer.copyright}
+          </p>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-gray-400 hover:text-[#E92252] transition-colors flex items-center gap-1"
+          >
+            💬 {t.contact.info.whatsapp}
+          </a>
         </div>
+
       </div>
     </footer>
   );

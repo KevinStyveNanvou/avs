@@ -1,15 +1,19 @@
 // components/Hero.tsx
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+
+// Numéros WhatsApp réels AVS
+const WHATSAPP_NUMBERS = ['237654122760', '237695247534', '237651557161'];
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [titleIndex, setTitleIndex] = useState(0);
+  const [titleIndex, setTitleIndex]     = useState(0);
   const [displayedText, setDisplayedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isDeleting, setIsDeleting]     = useState(false);
 
+  // Typewriter effect
   useEffect(() => {
     const currentTitle = t.hero.titles[titleIndex];
     const timeout = setTimeout(
@@ -18,7 +22,7 @@ export default function Hero() {
           if (displayedText.length < currentTitle.length) {
             setDisplayedText(currentTitle.slice(0, displayedText.length + 1));
           } else {
-            setTimeout(() => setIsDeleting(true), 2000);
+            setTimeout(() => setIsDeleting(true), 2200);
           }
         } else {
           if (displayedText.length > 0) {
@@ -29,23 +33,20 @@ export default function Hero() {
           }
         }
       },
-      isDeleting ? 50 : 100
+      isDeleting ? 45 : 95
     );
-
     return () => clearTimeout(timeout);
   }, [displayedText, isDeleting, titleIndex, t.hero.titles]);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const whatsappNumbers = ['237654122760', '237695247534', '237651557161'];
-  const whatsappUrl = `https://wa.me/${whatsappNumbers[0]}?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBERS[0]}?text=${encodeURIComponent(
     t.whatsapp.message
   )}`;
+
+  const phoneUrl = `tel:+${WHATSAPP_NUMBERS[0]}`;
 
   return (
     <section
@@ -54,31 +55,45 @@ export default function Hero() {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
+
+          {/* ── Côté texte ─────────────────────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
           >
-            <div className="h-24 mb-4">
-              <h1 className="text-5xl md:text-7xl font-bold text-[#0D1B2A] dark:text-white">
+            {/* Badge de confiance */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="inline-flex items-center gap-2 bg-[#E92252]/10 border border-[#E92252]/20 text-[#E92252] text-xs font-semibold px-4 py-1.5 rounded-full mb-6"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#E92252] animate-pulse" />
+              Yaoundé, Cameroun — N°1 du nettoyage professionnel
+            </motion.div>
+
+            {/* Titre animé */}
+            <div className="min-h-[120px] md:min-h-[160px] mb-2">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0D1B2A] dark:text-white leading-tight">
                 {displayedText}
-                <span className="text-[#E92252] animate-pulse">
-                  |
-                </span>
+                <span className="text-[#E92252] animate-pulse ml-0.5">|</span>
               </h1>
             </div>
 
-            <p className="text-2xl text-gray-600 dark:text-gray-300 mt-15 lg:mt-12 mb-8">
+            {/* Tagline */}
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-lg">
               {t.hero.tagline}
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-4 mb-8">
               <button
                 onClick={() => scrollToSection('services')}
-                className="btn-primary group"
+                className="btn-primary group flex items-center"
               >
                 {t.hero.cta1}
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
@@ -87,8 +102,30 @@ export default function Hero() {
                 {t.hero.cta2}
               </button>
             </div>
+
+            {/* Numéros de contact rapides */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="flex flex-wrap gap-3"
+            >
+              {['+237 654 12 27 60', '+237 695 24 75 34', '+237 651 55 71 61'].map(
+                (num, i) => (
+                  <a
+                    key={i}
+                    href={`tel:${num.replace(/\s/g, '')}`}
+                    className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 hover:text-[#E92252] dark:hover:text-[#E92252] transition-colors"
+                  >
+                    <Phone className="w-3 h-3" />
+                    {num}
+                  </a>
+                )
+              )}
+            </motion.div>
           </motion.div>
 
+          {/* ── Côté image ─────────────────────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -99,15 +136,33 @@ export default function Hero() {
               <div className="wave-card bg-white dark:bg-[#0E0A1A] p-0 overflow-hidden">
                 <img
                   src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Professional cleaning service"
+                  alt="AVS — Service de nettoyage professionnel à Yaoundé"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
+
+            {/* Floating badge stats */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.9, type: 'spring' }}
+              className="absolute -bottom-4 -left-4 bg-white dark:bg-[#1a1030] shadow-2xl rounded-2xl px-4 py-3 flex items-center gap-3"
+            >
+              <div className="w-10 h-10 rounded-full bg-[#E92252]/10 flex items-center justify-center">
+                <span className="text-[#E92252] text-lg font-black">✓</span>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Matériel inclus</p>
+                <p className="text-sm font-bold text-[#0D1B2A] dark:text-white">100% Professionnel</p>
+              </div>
+            </motion.div>
           </motion.div>
+
         </div>
       </div>
 
+      {/* ── Bouton WhatsApp flottant ──────────────────────────────────────── */}
       <motion.a
         href={whatsappUrl}
         target="_blank"
@@ -115,23 +170,11 @@ export default function Hero() {
         className="fixed bottom-8 right-8 z-40 whatsapp-button"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 1, type: 'spring' }}
+        transition={{ delay: 1.2, type: 'spring', stiffness: 200 }}
+        title={t.whatsapp.message}
       >
         <MessageCircle className="w-7 h-7" />
       </motion.a>
-
-      {/* <div className="wave-divider">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="w-full h-full"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            className="fill-white dark:fill-[#0E0A1A]"
-          ></path>
-        </svg>
-      </div> */}
     </section>
   );
 }
