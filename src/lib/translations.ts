@@ -298,9 +298,8 @@ export const translations = {
       info: {
         address: 'Yaoundé, Mobil Essos, Cameroun',
         phones: [
-          '+237 654 12 27 60',
-          '+237 695 24 75 34',
-          '+237 651 55 71 61',
+          '+237 653 50 90 41',
+          '+237 657 02 98 54',
         ],
         email: '237avotreservice@gmail.com',
         whatsapp: 'Écrire sur WhatsApp',
@@ -614,9 +613,8 @@ export const translations = {
       info: {
         address: 'Yaoundé, Mobil Essos, Cameroon',
         phones: [
-          '+237 654 12 27 60',
-          '+237 695 24 75 34',
-          '+237 651 55 71 61',
+          '+237 653 50 90 41',
+          '+237 657 02 98 54',
         ],
         email: '237avotreservice@gmail.com',
         whatsapp: 'Chat on WhatsApp',
