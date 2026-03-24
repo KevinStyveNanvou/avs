@@ -86,7 +86,7 @@ export default function About() {
             className="min-w-0"
           >
             <div className="glass-card p-8 overflow-hidden">
-              <p className="m-10 text-lg text-center text-gray-700 dark:text-gray-200 leading-relaxed break-words whitespace-normal">
+              <p className="m-1 text-lg text-center text-gray-700 dark:text-gray-200 leading-relaxed break-words whitespace-normal">
                 {t.about.content}
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function About() {
         </div>
 
         {/* ── Stats animées ──────────────────────────────────────────────── */}
-        <div className="grid gap-8">
+        <div className="flex space-between flex-wrap justify-center gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -105,12 +105,12 @@ export default function About() {
                 delay: 0.6 + index * 0.1,
                 ease: [0.34, 1.56, 0.64, 1],
               }}
-              className="wave-card glass-card p-8 text-center hover-lift"
+              className="wave-card glass-card p-4 text-center hover-lift"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-[#E92252] rounded-full mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
+                <stat.icon className="w-4 h-4 lg:w-8 lg:h-8 text-white" />
               </div>
-              <div className="text-5xl font-bold text-[#E92252] mb-2">
+              <div className="text-xl lg:text-5xl font-bold text-[#E92252] mb-2">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-gray-700 dark:text-gray-300 font-medium">
