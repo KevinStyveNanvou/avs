@@ -5,7 +5,7 @@ import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Numéros WhatsApp réels AVS
-const WHATSAPP_NUMBERS = ['237654122760', '237695247534', '237651557161'];
+const WHATSAPP_NUMBERS = ['237653509041', '237657029854'];
 
 export default function Hero() {
   const { t } = useLanguage();
