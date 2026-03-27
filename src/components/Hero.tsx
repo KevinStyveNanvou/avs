@@ -54,7 +54,7 @@ export default function Hero() {
       className="min-h-screen flex bg-white/40 dark:bg-transparent items-center justify-center pt-20 px-4 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 md:space-between gap-12 items-center">
 
           {/* ── Côté texte ─────────────────────────────────────────────── */}
           <motion.div
@@ -136,7 +136,7 @@ export default function Hero() {
                 <img
                   src="/img/pdg.jpg"
                   alt="AVS — Service de nettoyage professionnel à Yaoundé"
-                  className="w-3/5 h-3/5 object-cover border-1 border-color-gradient-to-br from-[#E92252] to-yellow-400 rounded-2xl shadow-lg"
+                  className="w-3/5 h-3/5 object-cover border-6 border-color-gradient-to-br from-[#E92252] to-yellow-400 rounded-2xl shadow-lg"
                 />
           
           </motion.div>
