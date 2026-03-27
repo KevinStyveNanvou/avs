@@ -137,26 +137,10 @@ export default function Hero() {
                 <img
                   src="/img/pdg.jpg"
                   alt="AVS — Service de nettoyage professionnel à Yaoundé"
-                  className="w-2/5 h-2/5 object-cover"
+                  className="w-3/5 h-3/5 object-cover"
                 />
               </div>
             </div>
-
-            {/* Floating badge stats */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.9, type: 'spring' }}
-              className="absolute -bottom-4 -left-4 bg-white dark:bg-[#1a1030] shadow-2xl rounded-2xl px-4 py-3 flex items-center gap-3"
-            >
-              <div className="w-10 h-10 rounded-full bg-[#E92252]/10 flex items-center justify-center">
-                <span className="text-[#E92252] text-lg font-black">✓</span>
-              </div>
-              <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">Matériel inclus</p>
-                <p className="text-sm font-bold text-[#0D1B2A] dark:text-white">100% Professionnel</p>
-              </div>
-            </motion.div>
           </motion.div>
 
         </div>
