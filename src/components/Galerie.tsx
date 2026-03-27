@@ -1,12 +1,14 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Gallery() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   const [startIndex, setStartIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useLanguage();
 
   const images = ["/images/1.jpg", "/images/2.jpg", "/images/3.jpg"];
   const videos = [
@@ -77,7 +79,7 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">Gallery</h2>
+          <h2 className="section-title">{t.gallery}</h2>
           <div className="section-underline" />
         </motion.div>
 

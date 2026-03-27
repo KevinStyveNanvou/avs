@@ -1,3 +1,5 @@
+import { g } from "framer-motion/client";
+
 export const translations = {
   fr: {
     nav: {
@@ -7,6 +9,7 @@ export const translations = {
       references: 'Références',
       contact: 'Contact',
     },
+    gallery:"Notre Galerie",
     hero: {
       titles: [
         'Nettoyage Professionnel',
@@ -329,6 +332,7 @@ export const translations = {
       references: 'References',
       contact: 'Contact',
     },
+    gallery:"Our Gallery",
     hero: {
       titles: [
         'Professional Cleaning',
