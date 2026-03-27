@@ -109,7 +109,7 @@ export default function Hero() {
                 <img
                   src="/img/pdg.jpg"
                   alt="AVS"
-                  className="w-[350px] h-[350px] object-cover"
+                  className="w-[350px] h-[400px] object-cover"
                 />
               </div>
             </div>
