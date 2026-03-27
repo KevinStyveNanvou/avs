@@ -39,7 +39,8 @@ export default function Gallery() {
       className="min-h-screen bg-white dark:bg-transparent px-4 py-20"
     >
       <div className="max-w-7xl mx-auto flex gap-10">
-
+          <h2 className="section-title">Gallery</h2>
+          <div className="section-underline" />
         {/* ─── Ligne Images ───────────────────────── */}
         <div className="grid md:grid-cols-3 gap-6">
           {images.map((src, i) => (
