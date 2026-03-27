@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Image from './components/image';
 import Loading from './components/loading'; // <-- import du composant
 import { Toaster } from 'sonner';
+import Gallery from './components/Galerie';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ function App() {
 
                 <Hero />
                 <About />
+                <Gallery />
                 <Image />
                 <Services />
                 <References />

@@ -132,10 +132,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
             className="relative"
           >
-            <div className="wave-card bg-gradient-to-br from-[#E92252] to-yellow-400 p-1">
-              <div className="wave-card bg-white dark:bg-[#0E0A1A] p-0 overflow-hidden">
+            <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1">
+              <div className="bg-white dark:bg-[#0E0A1A] p-0 overflow-hidden">
                 <img
-                  src="/img/girl.png"
+                  src="/img/pdg.jpg"
                   alt="AVS — Service de nettoyage professionnel à Yaoundé"
                   className="w-full h-full object-cover"
                 />
