@@ -44,7 +44,7 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="min-h-screen flex items-center justify-center bg-white/40 dark:bg-transparent px-4"
+      className="mt-10 min-h-screen flex items-center justify-center bg-white/40 dark:bg-transparent px-4"
     >
       <div className="max-w-7xl w-full mx-auto">
 

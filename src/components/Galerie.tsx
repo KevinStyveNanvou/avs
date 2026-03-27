@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -6,6 +6,7 @@ export default function Gallery() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   const [startIndex, setStartIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const images = ["/images/1.jpg", "/images/2.jpg", "/images/3.jpg"];
   const videos = [
@@ -17,11 +18,25 @@ export default function Gallery() {
     "/videos/6.mp4",
   ];
 
-  // 🔥 vidéos visibles (2 à la fois)
-  const visibleVideos = [
-    videos[startIndex],
-    videos[(startIndex + 1) % videos.length],
-  ];
+  // 🔥 Détection responsive
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // 🔥 vidéos visibles selon écran
+  const visibleVideos = isMobile
+    ? [videos[startIndex]]
+    : [
+        videos[startIndex],
+        videos[(startIndex + 1) % videos.length],
+      ];
 
   const togglePlay = (index: number) => {
     const realIndex = (startIndex + index) % videos.length;
@@ -95,14 +110,16 @@ export default function Gallery() {
             <ChevronLeft className="text-white w-6 h-6" />
           </button>
 
-          {/* Vidéos visibles */}
+          {/* Vidéos */}
           {visibleVideos.map((src, i) => {
             const realIndex = (startIndex + i) % videos.length;
 
             return (
               <motion.div
                 key={realIndex}
-                className="w-full max-w-md bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl overflow-hidden shadow-lg"
+                className={`w-full ${
+                  isMobile ? "max-w-sm" : "max-w-md"
+                } bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl overflow-hidden shadow-lg`}
               >
                 <div className="relative">
                   <video
