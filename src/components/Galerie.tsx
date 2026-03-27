@@ -92,7 +92,7 @@ export default function Gallery() {
                 scale: currentVideo === i ? 1 : 0.95,
               }}
               transition={{ duration: 0.6 }}
-              className="absolute w-full max-w-2xl"
+              className="absolute w-full max-w-2xl mb-10 rounded-2xl overflow-hidden shadow-lg"
             >
               <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl overflow-hidden shadow-lg">
                 <div className="relative">

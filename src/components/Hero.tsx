@@ -133,13 +133,11 @@ export default function Hero() {
             className="relative"
           >
             <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1">
-              <div className="bg-white dark:bg-[#0E0A1A] p-0 overflow-hidden">
                 <img
                   src="/img/pdg.jpg"
                   alt="AVS — Service de nettoyage professionnel à Yaoundé"
                   className="w-3/5 h-3/5 object-cover"
                 />
-              </div>
             </div>
           </motion.div>
 
