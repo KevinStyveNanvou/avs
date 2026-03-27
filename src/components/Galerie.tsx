@@ -38,9 +38,19 @@ export default function Gallery() {
       id="galerie"
       className="min-h-screen bg-white dark:bg-transparent px-4 py-20"
     >
-      <div className="max-w-7xl mx-auto flex gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-10">
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+
           <h2 className="section-title">Gallery</h2>
           <div className="section-underline" />
+        </motion.div>
+
+
         {/* ─── Ligne Images ───────────────────────── */}
         <div className="grid md:grid-cols-3 gap-6">
           {images.map((src, i) => (
@@ -61,7 +71,7 @@ export default function Gallery() {
         </div>
 
         {/* ─── Ligne Vidéos ───────────────────────── */}
-        <div className="flex gap-6">
+        <div className="flex flex-row gap-6">
           {videos.map((src, i) => (
             <motion.div
               key={i}
