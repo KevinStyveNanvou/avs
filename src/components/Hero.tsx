@@ -137,7 +137,7 @@ export default function Hero() {
                 <img
                   src="/img/pdg.jpg"
                   alt="AVS — Service de nettoyage professionnel à Yaoundé"
-                  className="h-min object-cover"
+                  className="w-2/5 h-2/5 object-cover"
                 />
               </div>
             </div>
