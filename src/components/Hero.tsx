@@ -132,13 +132,13 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1">
+            
                 <img
                   src="/img/pdg.jpg"
                   alt="AVS — Service de nettoyage professionnel à Yaoundé"
-                  className="w-3/5 h-3/5 object-cover"
+                  className="w-3/5 h-3/5 object-cover border-1 border-color-gradient-to-br from-[#E92252] to-yellow-400 rounded-2xl shadow-lg"
                 />
-            </div>
+          
           </motion.div>
 
         </div>

@@ -81,7 +81,7 @@ export default function Gallery() {
         </div>
 
         {/* ─── VIDEOS SLIDER AUTO ───────────────────────── */}
-        <div className="relative w-full flex justify-center">
+        <div className="relative w-full h-[500px] flex justify-center">
 
           {videos.map((src, i) => (
             <motion.div
