@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Gallery() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -17,18 +17,16 @@ export default function Gallery() {
     "/videos/6.mp4",
   ];
 
-  // 🔥 Auto slide toutes les 5 secondes
+  // ✅ Auto-slide intelligent
   useEffect(() => {
+    if (playingIndex !== null) return; // ⛔ stop si lecture
+
     const interval = setInterval(() => {
       setCurrentVideo((prev) => (prev + 1) % videos.length);
-
-      // pause toutes les vidéos
-      videoRefs.current.forEach((v) => v?.pause());
-      setPlayingIndex(null);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [playingIndex, videos.length]);
 
   const togglePlay = (index: number) => {
     const video = videoRefs.current[index];
@@ -42,6 +40,20 @@ export default function Gallery() {
       video.play();
       setPlayingIndex(index);
     }
+  };
+
+  const next = () => {
+    videoRefs.current.forEach((v) => v?.pause());
+    setPlayingIndex(null);
+    setCurrentVideo((prev) => (prev + 1) % videos.length);
+  };
+
+  const prev = () => {
+    videoRefs.current.forEach((v) => v?.pause());
+    setPlayingIndex(null);
+    setCurrentVideo((prev) =>
+      (prev - 1 + videos.length) % videos.length
+    );
   };
 
   return (
@@ -69,30 +81,44 @@ export default function Gallery() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2 }}
-              className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 relative overflow-hidden rounded-2xl shadow-lg"
+              className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl overflow-hidden shadow-lg"
             >
               <img
                 src={src}
-                alt=""
                 className="w-full h-[300px] object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           ))}
         </div>
 
-        {/* ─── VIDEOS SLIDER AUTO ───────────────────────── */}
-        <div className="relative w-full h-[500px] flex justify-center">
+        {/* ─── VIDEOS SLIDER ───────────────────────── */}
+        <div className="relative w-full h-[450px] flex items-center justify-center">
+
+          {/* Bouton gauche */}
+          <button
+            onClick={prev}
+            className="absolute left-4 z-20 bg-black/40 p-2 rounded-full"
+          >
+            <ChevronLeft className="text-white w-6 h-6" />
+          </button>
+
+          {/* Bouton droit */}
+          <button
+            onClick={next}
+            className="absolute right-4 z-20 bg-black/40 p-2 rounded-full"
+          >
+            <ChevronRight className="text-white w-6 h-6" />
+          </button>
 
           {videos.map((src, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0 }}
               animate={{
                 opacity: currentVideo === i ? 1 : 0,
                 scale: currentVideo === i ? 1 : 0.95,
               }}
-              transition={{ duration: 0.6 }}
-              className="absolute w-full max-w-2xl rounded-2xl overflow-hidden shadow-lg"
+              transition={{ duration: 0.5 }}
+              className="absolute w-full max-w-2xl"
             >
               <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl overflow-hidden shadow-lg">
                 <div className="relative">
@@ -106,7 +132,7 @@ export default function Gallery() {
                   {/* Play / Pause */}
                   <button
                     onClick={() => togglePlay(i)}
-                    className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition"
+                    className="absolute inset-0 flex items-center justify-center bg-black/30"
                   >
                     {playingIndex === i ? (
                       <Pause className="w-12 h-12 text-white" />
