@@ -44,7 +44,7 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="mt-10 min-h-screen flex items-center justify-center bg-white/40 dark:bg-transparent px-4"
+      className="mt-20 md:mt-10 lg:mt-10 min-h-screen flex items-center justify-center bg-white/40 dark:bg-transparent px-4"
     >
       <div className="max-w-7xl w-full mx-auto">
 
@@ -109,7 +109,7 @@ export default function Hero() {
                 <img
                   src="/img/pdg.jpg"
                   alt="AVS"
-                  className="w-[350px] h-[400px] object-cover"
+                  className="w-[350px] h-[350px] object-cover"
                 />
               </div>
             </div>
