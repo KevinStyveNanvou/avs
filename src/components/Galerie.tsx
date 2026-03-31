@@ -12,11 +12,11 @@ export default function Gallery() {
 
   const images = ["/images/1.jpg", "/images/2.jpg", "/images/3.jpg"];
   const videos = [
-    "/videos/1.mp4",
-    "/videos/2.mp4",
-    "/videos/3.mp4",
-    "/videos/4.mp4",
     "/videos/5.mp4",
+    "/videos/4.mp4",
+    "/videos/3.mp4",
+    "/videos/2.mp4",
+    "/videos/1.mp4",
     "/videos/6.mp4",
   ];
 
