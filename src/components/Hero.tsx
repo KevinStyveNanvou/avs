@@ -106,11 +106,11 @@ export default function Hero() {
             {/* ✅ FIX : vraie bordure gradient */}
             <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl shadow-xl">
               <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#0E0A1A]">
-                <img
-                  src="/img/pdg.jpg"
-                  alt="AVS"
-                  className="w-[350px] h-[350px] object-cover"
-                />
+               <video
+                    src="videos/6.mp4"
+                    className="w-full h-[300px] object-cover"
+                    preload="metadata"
+                  />
               </div>
             </div>
           </motion.div>
