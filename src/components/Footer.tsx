@@ -1,5 +1,5 @@
 // components/Footer.tsx
-import { Facebook, Instagram, Linkedin, Twitter, Tiktok, Phone, Mail, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Music, Phone, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
@@ -114,7 +114,7 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { Icon: Facebook,  href: 'https://www.facebook.com/profile.php?id=61558430400889' },
-                { Icon: Tiktok, href: 'https://www.tiktok.com/@avotreservice52?_r=1&_t=ZS-95S1EviB2a8' },
+                { Icon: Music, href: 'https://www.tiktok.com/@avotreservice52?_r=1&_t=ZS-95S1EviB2a8' },
                 { Icon: Instagram,  href: 'https://www.instagram.com/avs_service237?igsh=MWJib3I5NzBjaDB4' },
                 { Icon: Twitter,   href: '#' },
               ].map(({ Icon, href }, i) => (
