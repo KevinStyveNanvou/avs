@@ -53,9 +53,11 @@ function App() {
 
                 <Hero />
                 <About />
-                <Gallery />
+                <Services/>
+                
                 <Image />
-                <Services />
+                <Gallery />
+      
                 <References />
                 <Contact />
               </main>
