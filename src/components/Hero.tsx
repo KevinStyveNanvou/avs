@@ -107,10 +107,11 @@ export default function Hero() {
             <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl shadow-xl">
               <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#0E0A1A]">
                <video
-                    src="videos/6.mp4"
-                    className="w-full h-[300px] object-cover"
-                    preload="metadata"
-                  />
+  src="/videos/6.mp4"
+  className="w-full h-[300px] object-cover"
+  controls
+  preload="metadata"
+/>
               </div>
             </div>
           </motion.div>
