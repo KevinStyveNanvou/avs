@@ -40,11 +40,12 @@ export const translations = {
         oneTime: 'Services Ponctuels',
         sofa: 'Canapé & Désinfection',
       },
+      note:"Pour toute
 
       // ─── OFFRE ENTREPRISES ───────────────────────────────────────────────
       business: {
         intro:
-          'Nos offres entreprises couvrent des surfaces de 50 à 100 m², du lundi au vendredi, de 7h30 à 13h30. Matériel et produits d\'entretien inclus.',
+          'Nos offres entreprises couvrent des surfaces de 50 à 100 m², du lundi au vendredi, de 7h30 à 13h30. ✔ Pour un espace plus large, veuillez nous contacter pour un ajustement de prix.',
         premium: {
           name: 'PREMIUM',
           frequency: 'Tous les jours',
@@ -179,7 +180,7 @@ export const translations = {
           items: [
             'Dératisation',
             'Désinfection',
-            'Désintoxication',
+            'Désinsectisation',
             'Etc.',
           ],
         },
@@ -299,12 +300,12 @@ export const translations = {
         ],
       },
       info: {
-        address: 'Yaoundé, Mobil Essos, Cameroun',
+        address: 'Yaoundé, chapelle Essos, Cameroun',
         phones: [
           '+237 653 50 90 41',
           '+237 657 02 98 54',
         ],
-        email: '237avotreservice@gmail.com',
+        email: 'info@avs-cleaning.com',
         whatsapp: 'Écrire sur WhatsApp',
       },
     },
@@ -367,7 +368,7 @@ export const translations = {
       // ─── BUSINESS PLANS ──────────────────────────────────────────────────
       business: {
         intro:
-          'Our business plans cover areas of 50 to 100 m², Monday to Friday, from 7:30 AM to 1:30 PM. Equipment and cleaning products included.',
+          'Our business plans cover areas of 50 to 100 m², Monday to Friday, from 7:30 AM to 1:30 PM. ✔ For a larger space, please contact us for a custom quote..',
         premium: {
           name: 'PREMIUM',
           frequency: 'Every day',
@@ -502,7 +503,7 @@ export const translations = {
           items: [
             'Rat extermination',
             'Disinfection',
-            'Detoxification',
+            'Pest control',
             'Etc.',
           ],
         },
@@ -615,12 +616,12 @@ export const translations = {
         ],
       },
       info: {
-        address: 'Yaoundé, Mobil Essos, Cameroon',
+        address: 'Yaoundé,Essos chapel, Cameroon',
         phones: [
           '+237 653 50 90 41',
           '+237 657 02 98 54',
         ],
-        email: '237avotreservice@gmail.com',
+        email: 'info@avs-cleaning.com',
         whatsapp: 'Chat on WhatsApp',
       },
     },
