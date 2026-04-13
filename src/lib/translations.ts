@@ -40,7 +40,6 @@ export const translations = {
         oneTime: 'Services Ponctuels',
         sofa: 'Canapé & Désinfection',
       },
-      note:"Pour toute
 
       // ─── OFFRE ENTREPRISES ───────────────────────────────────────────────
       business: {
