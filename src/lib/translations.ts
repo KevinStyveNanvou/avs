@@ -13,7 +13,7 @@ export const translations = {
     hero: {
       titles: [
         'Nettoyage Professionnel',
-        'Entreprises & Particuliers',
+        'Entreprises  & Particuliers',
         'Hygiène Garantie',
       ],
       tagline: 'Le partenaire de confiance pour la propreté de vos espaces à Yaoundé',
