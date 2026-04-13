@@ -57,7 +57,7 @@ export default function Contact() {
     {
       icon: MapPin,
       label: t.contact.info.address,
-      link: 'https://maps.google.com/?q=Yaoundé,+Mobil+Essos,+Cameroun',
+      link: 'https://maps.google.com/?q=Yaoundé,+chapelle+Essos,+Cameroun',
     },
     ...t.contact.info.phones.map((num) => ({
       icon: Phone,
