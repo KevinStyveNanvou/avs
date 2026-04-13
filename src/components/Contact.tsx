@@ -1,7 +1,7 @@
 // components/Contact.tsx
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { MapPin, Phone, Mail, MessageCircle, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageCircle, Send } from 'lucide-react' ;
 import { useLanguage } from '../contexts/LanguageContext';
 import { toast } from 'sonner';
 
