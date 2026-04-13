@@ -162,10 +162,10 @@ export default function Contact() {
             />
             <div className="absolute inset-0 bg-[#E92252]/50" />
 
-            <div className="relative z-10 h-full flex items-center justify-center p-6 py-10">
+            <div className="relative z-10 h-full flex items-center justify-center p-1 lg:p-6 lg:py-10">
               <form
                 onSubmit={handleSubmit}
-                className="w-full max-w-lg bg-white/20 backdrop-blur-md dark:bg-black/30 rounded-2xl shadow-2xl p-8 space-y-5"
+                className="w-full max-w-lg bg-white/20 backdrop-blur-md dark:bg-black/30 rounded-2xl shadow-2xl p-2 lg:p-8 space-y-5"
               >
                 {/* Nom */}
                 <motion.div
