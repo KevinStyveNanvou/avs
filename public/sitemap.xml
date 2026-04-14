@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://avs-cleaning.com/</loc>
+
+    <video:video>
+      <video:thumbnail_loc>https://avs-cleaning.com/img/logo.png</video:thumbnail_loc>
+      <video:title>AVS - Présentation de nos services</video:title>
+      <video:description>Découvrez AVS, le meilleur service de nettoyage professionnel à Yaoundé.</video:description>
+      <video:content_loc>https://avs-cleaning.com/videos/6.mp4</video:content_loc>
+      <video:duration>112</video:duration>
+      <video:publication_date>2026-04-14</video:publication_date>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://avs-cleaning.com/img/logo.png</video:thumbnail_loc>
+      <video:title>AVS - Nettoyage professionnel 1</video:title>
+      <video:description>Nettoyage professionnel de carreaux par AVS à Yaoundé, Cameroun.</video:description>
+      <video:content_loc>https://avs-cleaning.com/videos/1.mp4</video:content_loc>
+      <video:duration>11</video:duration>
+      <video:publication_date>2026-04-14</video:publication_date>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://avs-cleaning.com/img/logo.png</video:thumbnail_loc>
+      <video:title>AVS - Nettoyage professionnel 2</video:title>
+      <video:description>Nettoyage de Canapés</video:description>
+      <video:content_loc>https://avs-cleaning.com/videos/2.mp4</video:content_loc>
+      <video:duration>12</video:duration>
+      <video:publication_date>2026-04-14</video:publication_date>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://avs-cleaning.com/img/logo.png</video:thumbnail_loc>
+      <video:title>AVS - Nettoyage professionnel 3</video:title>
+      <video:description>Bonne année avec AVS une année propre une vie propre</video:description>
+      <video:content_loc>https://avs-cleaning.com/videos/3.mp4</video:content_loc>
+      <video:duration>35</video:duration>
+      <video:publication_date>2026-04-14</video:publication_date>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://avs-cleaning.com/img/logo.png</video:thumbnail_loc>
+      <video:title>AVS - Nettoyage professionnel 4</video:title>
+      <video:description>Bonne année nettoyage professionnel par AVS à Yaoundé, Cameroun.</video:description>
+      <video:content_loc>https://avs-cleaning.com/videos/4.mp4</video:content_loc>
+      <video:duration>35</video:duration>
+      <video:publication_date>2026-04-14</video:publication_date>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://avs-cleaning.com/images/2.jpg</video:thumbnail_loc>
+      <video:title>AVS - Nettoyage professionnel 5</video:title>
+      <video:description>Service de nettoyage professionnel par AVS à Yaoundé, Cameroun.</video:description>
+      <video:content_loc>https://avs-cleaning.com/videos/5.mp4</video:content_loc>
+      <video:duration>31</video:duration>
+      <video:publication_date>2026-04-14</video:publication_date>
+    </video:video>
+
+  </url>
+</urlset>
