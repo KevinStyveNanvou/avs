@@ -55,10 +55,10 @@ export default function Contact() {
   // Cartes de contact : adresse + 3 numéros + email + WhatsApp
   const contactCards = [
     {
-      icon: MapPin,
-      label: t.contact.info.address,
-      link: 'https://maps.google.com/?q=Yaoundé,+chapelle+Essos,+Cameroun',
-    },
+  icon: MapPin,
+  label: t.contact.info.address,
+  link: 'https://maps.google.com/?q=3.873944,11.538444',
+},
     ...t.contact.info.phones.map((num) => ({
       icon: Phone,
       label: num,
@@ -137,13 +137,13 @@ export default function Contact() {
             >
               <div className="md:wave-card lg:wave-card overflow-hidden h-56">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9161887744684!2d11.516666!3d3.867722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTInMDMuOCJOIDExwrAzMScwMC4wIkU!5e0!3m2!1sfr!2scm!4v1234567890"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="AVS — Yaoundé, Mobil Essos"
-                />
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9161887744684!2d11.538444!3d3.873944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTInMjYuMiJOIDExwrAzMicxOC40IkU!5e0!3m2!1sfr!2scm!4v1234567890"
+  className="w-full h-full border-0"
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="AVS — Yaoundé, chapelle Essos"
+/>
               </div>
             </motion.div>
           </motion.div>
