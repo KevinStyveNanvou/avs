@@ -520,6 +520,9 @@ export default function Services() {
           )}
 
         </AnimatePresence>
+        <p className="text-center text-gray-500 dark:text-gray-400 mb-8 italic text-lg">
+              {t.services.note}
+        </p>
       </div>
     </section>
   );
