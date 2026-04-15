@@ -40,11 +40,12 @@ export const translations = {
         oneTime: 'Services Ponctuels',
         sofa: 'Canapé & Désinfection',
       },
+      note:'✔ Pour une superficie supérieure à 100m2 veuillez contacter nos services.',
 
       // ─── OFFRE ENTREPRISES ───────────────────────────────────────────────
       business: {
         intro:
-          'Nos offres entreprises couvrent des surfaces de 50 à 100 m², du lundi au vendredi, de 7h30 à 13h30. ✔ Pour un espace plus large, veuillez nous contacter pour un ajustement de prix.',
+          'Nos offres entreprises couvrent des surfaces de 50 à 100 m², du lundi au vendredi, de 7h30 à 13h30.',
         premium: {
           name: 'PREMIUM',
           frequency: 'Tous les jours',
@@ -363,6 +364,8 @@ export const translations = {
         oneTime: 'One-Time Services',
         sofa: 'Sofa & Disinfection',
       },
+      note:'✔ For areas larger than 100 m², please contact our services.',
+        
 
       // ─── BUSINESS PLANS ──────────────────────────────────────────────────
       business: {
