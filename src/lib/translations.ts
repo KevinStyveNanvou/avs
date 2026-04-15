@@ -370,7 +370,7 @@ export const translations = {
       // ─── BUSINESS PLANS ──────────────────────────────────────────────────
       business: {
         intro:
-          'Our business plans cover areas of 50 to 100 m², Monday to Friday, from 7:30 AM to 1:30 PM. ✔ For a larger space, please contact us for a custom quote..',
+          'Our business plans cover areas of 50 to 100 m², Monday to Friday, from 7:30 AM to 1:30 PM.',
         premium: {
           name: 'PREMIUM',
           frequency: 'Every day',
