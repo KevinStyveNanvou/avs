@@ -54,7 +54,7 @@ function AVSLogo() {
       >
         {/* Texte AVS */}
         <img
-          src="/img/logo.png"
+          src="/img/loghho.png"
           alt="AVS Logo"
           className="w-16 h-16 z-10"
         />
