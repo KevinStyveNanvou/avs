@@ -46,7 +46,7 @@ export default function Footer() {
           {/* ── Colonne 1 : logo + tagline ──────────────────────────────── */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <img src="/img/logo.png" alt="AVS Logo" className="h-16 w-auto" />
+              <img src="/img/loghho.png" alt="AVS Logo" className="h-16 w-auto" />
             </div>
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
               {t.footer.tagline}
