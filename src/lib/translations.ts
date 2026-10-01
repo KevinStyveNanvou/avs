@@ -11,6 +11,15 @@ export const translations = {
     },
     gallery:"Notre Galerie",
     hero: {
+      badge: 'Yaoundé, Cameroun — N°1 du nettoyage professionnel',
+  promo: {
+    title: 'Grande promotion d\'octobre',
+    subtitle: 'Profitez de nos offres spéciales sur les couleurs rouges !',
+    badge: 'Promo',
+    cta: 'Profiter de l\'offre',
+    zoom: 'Agrandir',
+    close: 'Fermer',
+  },
       titles: [
         'Nettoyage Professionnel',
         'Entreprises  & Particuliers',
@@ -335,6 +344,15 @@ export const translations = {
     },
     gallery:"Our Gallery",
     hero: {
+      badge: 'Yaoundé, Cameroon — #1 in professional cleaning',
+  promo: {
+    title: 'Big October Promotion',
+    subtitle: 'Enjoy our special offers on red colors!',
+    badge: 'Sale',
+    cta: 'Claim the offer',
+    zoom: 'Enlarge',
+    close: 'Close',
+  },
       titles: [
         'Professional Cleaning',
         'Businesses & Households',
