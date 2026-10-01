@@ -14,7 +14,7 @@ export const translations = {
       badge: 'Yaoundé, Cameroun — N°1 du nettoyage professionnel',
   promo: {
     title: 'Grande promotion d\'octobre',
-    subtitle: 'Profitez de nos offres spéciales sur les couleurs rouges !',
+    subtitle: 'Profitez de nos offres spéciales sur les couleurs rose!',
     badge: 'Promo',
     cta: 'Profiter de l\'offre',
     zoom: 'Agrandir',
@@ -347,7 +347,7 @@ export const translations = {
       badge: 'Yaoundé, Cameroon — #1 in professional cleaning',
   promo: {
     title: 'Big October Promotion',
-    subtitle: 'Enjoy our special offers on red colors!',
+    subtitle: 'Enjoy our special offers on pink colors!',
     badge: 'Sale',
     cta: 'Claim the offer',
     zoom: 'Enlarge',
