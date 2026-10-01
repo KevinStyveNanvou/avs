@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, MessageCircle, Flame, X, ZoomIn } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const WHATSAPP_NUMBERS = ['237653509041', '237657029854'];
@@ -10,7 +10,9 @@ export default function Hero() {
   const [titleIndex, setTitleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [zoomed, setZoomed] = useState(false);
 
+  // Effet machine à écrire
   useEffect(() => {
     const currentTitle = t.hero.titles[titleIndex];
     const timeout = setTimeout(() => {
@@ -33,6 +35,18 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [displayedText, isDeleting, titleIndex, t.hero.titles]);
 
+  // Fermer l'image agrandie avec Échap + bloquer le scroll
+  useEffect(() => {
+    if (!zoomed) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setZoomed(false);
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [zoomed]);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -44,47 +58,73 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="mt-20 md:mt-10 lg:mt-10 min-h-screen flex items-center justify-center bg-white/40 dark:bg-transparent px-4"
+      className="min-h-screen flex items-center justify-center bg-white/40 dark:bg-transparent px-4 pt-28 pb-12 md:pt-24"
     >
       <div className="max-w-7xl w-full mx-auto">
+        {/* ── BANDEAU PROMO ───────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 md:mb-10 rounded-2xl bg-gradient-to-r from-[#E92252] via-red-600 to-[#E92252] text-white shadow-lg shadow-red-500/30 px-4 py-4 sm:px-6 sm:py-5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center"
+        >
+          <motion.span
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ repeat: Infinity, duration: 1.4 }}
+            className="hidden sm:block"
+          >
+            <Flame className="w-8 h-8 text-yellow-300" />
+          </motion.span>
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-wide leading-tight">
+              🔥 {t.hero.promo.title} 🔥
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg font-medium text-white/90 mt-1">
+              {t.hero.promo.subtitle}
+            </p>
+          </div>
+        </motion.div>
 
-        {/* ✅ FIX : vrai space-between */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-12">
           {/* ── TEXTE ───────────────── */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1"
+            className="flex-1 text-center md:text-left"
           >
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 bg-[#E92252]/10 border border-[#E92252]/20 text-[#E92252] text-xs font-semibold px-4 py-1.5 rounded-full mb-6"
-            >
+            <div className="inline-flex items-center gap-2 bg-[#E92252]/10 border border-[#E92252]/20 text-[#E92252] text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
               <span className="w-2 h-2 rounded-full bg-[#E92252] animate-pulse" />
-              Yaoundé, Cameroun — N°1 du nettoyage professionnel
-            </motion.div>
+              {t.hero.badge}
+            </div>
 
-            <div className="min-h-[120px] mb-4">
-              <h1 className="text-5xl md:text-6xl font-extrabold text-[#0D1B2A] dark:text-white leading-tight">
+            <div className="min-h-[110px] sm:min-h-[120px] mb-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0D1B2A] dark:text-white leading-tight">
                 {displayedText}
                 <span className="text-[#E92252] animate-pulse ml-1">|</span>
               </h1>
             </div>
 
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
               {t.hero.tagline}
             </p>
 
-            <div className="flex gap-4">
-              <button
-                onClick={() => scrollToSection('services')}
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary flex items-center"
               >
-                {t.hero.cta1}
+                {t.hero.promo.cta}
                 <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+
+              <button
+                onClick={() => scrollToSection('services')}
+                className="btn-secondary"
+              >
+                {t.hero.cta1}
               </button>
 
               <button
@@ -96,28 +136,77 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* ── IMAGE ───────────────── */}
+          {/* ── FLYER PROMO ───────────────── */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 flex justify-center"
+            className="flex-1 flex justify-center w-full"
           >
-            {/* ✅ FIX : vraie bordure gradient */}
-            <div className="bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl shadow-xl">
-              <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#0E0A1A]">
-               <video
-  src="/videos/6.mp4"
-  className="w-full h-[300px] object-cover"
-  controls
-  preload="metadata"
-/>
-              </div>
+            <div className="relative w-full max-w-[300px] sm:max-w-sm md:max-w-md">
+              {/* Badge flottant */}
+              <motion.span
+                animate={{ rotate: [-6, 6, -6] }}
+                transition={{ repeat: Infinity, duration: 2.5 }}
+                className="absolute -top-3 -right-3 z-10 bg-yellow-400 text-[#0D1B2A] text-xs sm:text-sm font-black uppercase px-3 py-1.5 rounded-full shadow-lg"
+              >
+                {t.hero.promo.badge}
+              </motion.span>
+
+              <button
+                type="button"
+                onClick={() => setZoomed(true)}
+                aria-label={t.hero.promo.zoom}
+                className="group block w-full bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl shadow-xl shadow-red-500/30 cursor-zoom-in"
+              >
+                <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#0E0A1A]">
+                  <img
+                    src="/images/pub.jpg"
+                    alt={t.hero.promo.title}
+                    className="w-full h-auto max-h-[70vh] object-contain"
+                    loading="eager"
+                  />
+                  <span className="absolute bottom-2 right-2 flex items-center gap-1 bg-black/60 text-white text-xs px-2.5 py-1 rounded-full opacity-90 group-hover:opacity-100">
+                    <ZoomIn className="w-3.5 h-3.5" />
+                    {t.hero.promo.zoom}
+                  </span>
+                </div>
+              </button>
             </div>
           </motion.div>
-
         </div>
       </div>
+
+      {/* ── IMAGE AGRANDIE ───────────────── */}
+      <AnimatePresence>
+        {zoomed && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setZoomed(false)}
+            className="fixed inset-0 z-50 bg-black/85 flex items-center justify-center p-4 cursor-zoom-out"
+          >
+            <button
+              type="button"
+              onClick={() => setZoomed(false)}
+              aria-label={t.hero.promo.close}
+              className="absolute top-4 right-4 bg-white/15 hover:bg-white/30 text-white rounded-full p-2"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              src="/images/pub.jpg"
+              alt={t.hero.promo.title}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* WhatsApp */}
       <motion.a
@@ -133,4 +222,4 @@ export default function Hero() {
       </motion.a>
     </section>
   );
-}
+            }
