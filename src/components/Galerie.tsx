@@ -90,6 +90,23 @@ export default function Gallery() {
           ))}
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-5xl rounded-3xl bg-gradient-to-r from-[#E92252] via-[#f03b54] to-yellow-400 px-6 py-8 text-center text-white shadow-xl md:px-12 md:py-10"
+        >
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-white/90 md:text-base">
+            Grande promotion de fin d’année
+          </p>
+          <h3 className="text-3xl font-extrabold leading-tight md:text-5xl">
+            Jusqu’à 25 % de réduction sur tous les services d’AVS
+          </h3>
+          <p className="mt-4 text-lg font-medium md:text-2xl">
+            Pour commencer la nouvelle année tout propres !
+          </p>
+        </motion.div>
+
         <div className="relative flex items-center justify-center gap-6">
           <button
             onClick={prev}
