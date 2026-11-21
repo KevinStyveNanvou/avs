@@ -1,3 +1,12 @@
-const videos = ["/videos/5.mp4", "/videos/4.mp4", "/videos/3.mp4", "/videos/6.mp4", "/videos/1.mp4", "/videos/2.mp4"];
+const videos = [
+  "/videos/5.mp4",
+  "/videos/4.mp4",
+  "/videos/3.mp4",
+  "/videos/6.mp4",
+  "/videos/1.mp4",
+  "/videos/2.mp4",
+  "/VID-20261121-WA0007.mp4",
+  "/VID-20261121-WA0008.mp4",
+];
 
 export default videos;

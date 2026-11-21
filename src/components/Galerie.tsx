@@ -17,27 +17,21 @@ export default function Gallery() {
     "/videos/2.mp4",
     "/videos/1.mp4",
     "/videos/4.mp4",
+    "/videos/6.mp4",
+    "/VID-20261121-WA0007.mp4",
+    "/VID-20261121-WA0008.mp4",
   ];
 
-  // 🔥 Détection responsive
   useEffect(() => {
-    const checkScreen = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
     checkScreen();
     window.addEventListener("resize", checkScreen);
-
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // 🔥 vidéos visibles selon écran
   const visibleVideos = isMobile
     ? [videos[startIndex]]
-    : [
-        videos[startIndex],
-        videos[(startIndex + 1) % videos.length],
-      ];
+    : [videos[startIndex], videos[(startIndex + 1) % videos.length]];
 
   const togglePlay = (index: number) => {
     const realIndex = (startIndex + index) % videos.length;
@@ -63,16 +57,12 @@ export default function Gallery() {
   const prev = () => {
     videoRefs.current.forEach((v) => v?.pause());
     setPlayingIndex(null);
-    setStartIndex((prev) =>
-      (prev - 1 + videos.length) % videos.length
-    );
+    setStartIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
   return (
     <section className="min-h-screen bg-white dark:bg-transparent px-4 py-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 gap-10">
-
-        {/* ─── HEADER ───────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +72,6 @@ export default function Gallery() {
           <div className="section-underline" />
         </motion.div>
 
-        {/* ─── IMAGES ───────────────────────── */}
         <div className="grid md:grid-cols-3 gap-6">
           {images.map((src, i) => (
             <motion.div
@@ -94,33 +83,29 @@ export default function Gallery() {
             >
               <img
                 src={src}
+                alt="AVS galerie"
                 className="w-full h-[300px] object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           ))}
         </div>
 
-        {/* ─── VIDEOS CAROUSEL ───────────────────────── */}
         <div className="relative flex items-center justify-center gap-6">
-
-          {/* Bouton gauche */}
           <button
             onClick={prev}
+            aria-label="Vidéo précédente"
             className="absolute left-0 z-10 bg-black/40 p-2 rounded-full"
           >
             <ChevronLeft className="text-white w-6 h-6" />
           </button>
 
-          {/* Vidéos */}
           {visibleVideos.map((src, i) => {
             const realIndex = (startIndex + i) % videos.length;
 
             return (
               <motion.div
                 key={realIndex}
-                className={`w-full ${
-                  isMobile ? "max-w-sm" : "max-w-md"
-                } bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl overflow-hidden shadow-lg`}
+                className={`w-full ${isMobile ? "max-w-sm" : "max-w-md"} bg-gradient-to-br from-[#E92252] to-yellow-400 p-1 rounded-2xl overflow-hidden shadow-lg`}
               >
                 <div className="relative">
                   <video
@@ -129,10 +114,9 @@ export default function Gallery() {
                     className="w-full h-[300px] object-cover"
                     preload="metadata"
                   />
-
-                  {/* Play / Pause */}
                   <button
                     onClick={() => togglePlay(i)}
+                    aria-label={playingIndex === realIndex ? "Mettre en pause" : "Lire la vidéo"}
                     className="absolute inset-0 flex items-center justify-center bg-black/30"
                   >
                     {playingIndex === realIndex ? (
@@ -146,16 +130,14 @@ export default function Gallery() {
             );
           })}
 
-          {/* Bouton droit */}
           <button
             onClick={next}
+            aria-label="Vidéo suivante"
             className="absolute right-0 z-10 bg-black/40 p-2 rounded-full"
           >
             <ChevronRight className="text-white w-6 h-6" />
           </button>
-
         </div>
-
       </div>
     </section>
   );
